@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "415792958265",
+    "firebase_url": "https://marksup-b4850.firebaseio.com",
+    "project_id": "marksup-b4850",
+    "storage_bucket": "marksup-b4850.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415792958265:android:cf9e27a4f5e924cf9db6e8",
+        "android_client_info": {
+          "package_name": "com.bifexey.simpleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415792958265-9nhooiua5tagndit10ggtsp8vhrcrvj6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoj_iJIsnDpHz5Nqm2OGCRa4aADSXQ2xY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415792958265-9nhooiua5tagndit10ggtsp8vhrcrvj6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
