@@ -1,9 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration">
+    android:visibility="visible"
+    tools:context=".Registration"
+    android:background="@color/colorBackGround">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/registration_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация"
+        android:textSize="30sp"
+        android:textColor="#515C6F"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/reg_lin_lay"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/registration_field_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:padding="5dp"
+        android:layout_below="@+id/registration_text">
+
+        <EditText
+            android:id="@+id/edit_text_first_name_r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Имя"
+            android:padding="15dp"
+            android:background="@color/colorWhite"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edit_text_second_name_r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Фамилия"
+            android:padding="15dp"
+            android:background="@color/colorWhite"
+            android:inputType="text"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/location_spinner_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@color/colorWhite"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_down_xx"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_register"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:background="@drawable/sign_out_btn_back"
+        android:layout_marginTop="35dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/reg_lin_lay">
+
+        <TextView
+            android:id="@+id/SOS_btn_publish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Зарегистрироваться "
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="60dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/white_btn_go2"
+            android:layout_marginEnd="15dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bottom_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Создавая аккаунт, вы соглашаетесь с нашим  Пользовательским соглашением и"
+        android:layout_below="@+id/btn_register"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColorLink="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/bottom_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="с нашей Политикой конфиденциальности"
+        android:layout_below="@+id/bottom_text1"
+        android:gravity="center"
+        android:textColorLink="@color/colorPrimary"/>
+</RelativeLayout>
