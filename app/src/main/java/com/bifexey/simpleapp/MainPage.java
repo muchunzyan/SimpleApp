@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.ui.account.AccountStudentFragment;
 import com.bifexey.simpleapp.ui.teacherAccount.AccountTeacherFragment;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -109,7 +110,7 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
                                 MenuItem sos = navView.getMenu().getItem(0);
                                 sos.setVisible(true);
                                 activity = "student";
-                                //loadFragment(new AccountStudentFragment());
+                                loadFragment(new AccountStudentFragment());
                             }
                         }
                     }
@@ -183,8 +184,8 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
 
         Fragment fragment = null;
 
-//        if (activity != null) {
-//            switch (menuItem.getItemId()) {
+        if (activity != null) {
+            switch (menuItem.getItemId()) {
 //                case R.id.navigation_SOS:
 //                    fragment = new SOS_Fragment();
 //                    break;
@@ -200,14 +201,14 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
 //                case R.id.navigation_chat:
 //                    fragment = new ChatFragment();
 //                    break;
-//                case R.id.navigation_account:
-//                    if (activity.equals("teacher"))
-//                        fragment = new AccountTeacherFragment();
-//                    if (activity.equals("student"))
-//                        fragment = new AccountStudentFragment();
-//                    break;
-//            }
-//        }
+                case R.id.navigation_account:
+                    if (activity.equals("teacher"))
+                        fragment = new AccountTeacherFragment();
+                    if (activity.equals("student"))
+                        fragment = new AccountStudentFragment();
+                    break;
+            }
+        }
 
         return loadFragment(fragment);
     }
