@@ -3,6 +3,7 @@ package com.bifexey.simpleapp.ui.teacherAccount;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bifexey.simpleapp.R;
+import com.bifexey.simpleapp.TeacherRegistration;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -53,17 +55,17 @@ public class AccountTeacherFragment extends Fragment implements View.OnClickList
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_teacher_account, null);
 
-//        text_name = v.findViewById(R.id.text_name);
-//        text_phone_number = v.findViewById(R.id.text_phone_number);
-//        btn_activity_student = v.findViewById(R.id.btn_activity_student);
-//        btn_activity_teacher = v.findViewById(R.id.btn_activity_teacher);
-//        img_account = v.findViewById(R.id.img_account);
-//        btn_account_help = v.findViewById(R.id.btn_account_help);
-//        my_subjects_btn = v.findViewById(R.id.my_subjects_btn);
-//        FAQ_btn = v.findViewById(R.id.FAQ_btn);
-//        about_app_btn = v.findViewById(R.id.about_app_btn);
-//        settings_btn = v.findViewById(R.id.settings_btn);
-//        btn_add_teacher_subject = v.findViewById(R.id.btn_add_teacher_subject);
+        text_name = v.findViewById(R.id.text_name);
+        text_phone_number = v.findViewById(R.id.text_phone_number);
+        btn_activity_student = v.findViewById(R.id.btn_activity_student);
+        btn_activity_teacher = v.findViewById(R.id.btn_activity_teacher);
+        img_account = v.findViewById(R.id.img_account);
+        btn_account_help = v.findViewById(R.id.btn_account_help);
+        my_subjects_btn = v.findViewById(R.id.my_subjects_btn);
+        FAQ_btn = v.findViewById(R.id.FAQ_btn);
+        about_app_btn = v.findViewById(R.id.about_app_btn);
+        settings_btn = v.findViewById(R.id.settings_btn);
+        btn_add_teacher_subject = v.findViewById(R.id.btn_add_teacher_subject);
 
         btn_activity_student.setOnClickListener(this);
         btn_activity_teacher.setOnClickListener(this);
@@ -125,47 +127,47 @@ public class AccountTeacherFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_activity_student:
-//                myRefCurrentUser.child("activity").setValue("student");
-//                break;
-//            case R.id.btn_activity_teacher:
-//                if (possible) {
-//                    myRefCurrentUser.child("activity").setValue("teacher");
-//                }
-//                else {
-//                    //Intent intent = new Intent(getContext(), TeacherRegistration.class);
-//                    //startActivity(intent);
-//                    if(getActivity() != null) {
-//                        getActivity().finish();
-//                    }
-//                }
-//                break;
-//            case R.id.btn_account_help:
-//                createDialogWindow();
-//                dialogWindow.show();
-//                break;
-//            case R.id.my_subjects_btn:
-//                //Intent intent1 = new Intent(getActivity(), MySubjects.class);
-//                //startActivity(intent1);
-//                break;
-//            case R.id.FAQ_btn:
-//                //Intent intent2 = new Intent(getActivity(), FAQList.class);
-//                //startActivity(intent2);
-//                break;
-//            case R.id.about_app_btn:
-//                //Intent intent3 = new Intent(getActivity(), AboutApp.class);
-//                //startActivity(intent3);
-//                break;
-//            case R.id.settings_btn:
-//                //Intent intent4 = new Intent(getActivity(), AccountSettings.class);
-//                //startActivity(intent4);
-//                break;
-//            case R.id.btn_add_teacher_subject:
-//                //Intent intent5 = new Intent(getActivity(), AddSubjectForm.class);
-//                //startActivity(intent5);
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.btn_activity_student:
+                myRefCurrentUser.child("activity").setValue("student");
+                break;
+            case R.id.btn_activity_teacher:
+                if (possible) {
+                    myRefCurrentUser.child("activity").setValue("teacher");
+                }
+                else {
+                    Intent intent = new Intent(getContext(), TeacherRegistration.class);
+                    startActivity(intent);
+                    if(getActivity() != null) {
+                        getActivity().finish();
+                    }
+                }
+                break;
+            case R.id.btn_account_help:
+                createDialogWindow();
+                dialogWindow.show();
+                break;
+            case R.id.my_subjects_btn:
+                //Intent intent1 = new Intent(getActivity(), MySubjects.class);
+                //startActivity(intent1);
+                break;
+            case R.id.FAQ_btn:
+                //Intent intent2 = new Intent(getActivity(), FAQList.class);
+                //startActivity(intent2);
+                break;
+            case R.id.about_app_btn:
+                //Intent intent3 = new Intent(getActivity(), AboutApp.class);
+                //startActivity(intent3);
+                break;
+            case R.id.settings_btn:
+                //Intent intent4 = new Intent(getActivity(), AccountSettings.class);
+                //startActivity(intent4);
+                break;
+            case R.id.btn_add_teacher_subject:
+                //Intent intent5 = new Intent(getActivity(), AddSubjectForm.class);
+                //startActivity(intent5);
+                break;
+        }
     }
 
     private static String removeCharAt(String s, int pos) {

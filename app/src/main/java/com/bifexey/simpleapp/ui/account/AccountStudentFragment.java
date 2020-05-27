@@ -53,21 +53,21 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_teacher_account, null);
 
-//        text_name = v.findViewById(R.id.text_name);
-//        text_location = v.findViewById(R.id.text_location);
-//        btn_activity_student = v.findViewById(R.id.btn_activity_student);
-//        btn_activity_teacher = v.findViewById(R.id.btn_activity_teacher);
-//        img_account = v.findViewById(R.id.img_account);
-//        btn_account_help = v.findViewById(R.id.btn_account_help);
-//        chosen_teachers_btn = v.findViewById(R.id.chosen_teachers_btn);
-//        FAQ_btn = v.findViewById(R.id.FAQ_btn);
-//        about_app_btn = v.findViewById(R.id.about_app_btn);
-//        settings_btn = v.findViewById(R.id.settings_btn);
+        text_name = v.findViewById(R.id.text_name);
+        text_location = v.findViewById(R.id.text_location);
+        btn_activity_student = v.findViewById(R.id.btn_activity_student);
+        btn_activity_teacher = v.findViewById(R.id.btn_activity_teacher);
+        img_account = v.findViewById(R.id.img_account);
+        btn_account_help = v.findViewById(R.id.btn_account_help);
+        chosen_teachers_btn = v.findViewById(R.id.chosen_teachers_btn);
+        FAQ_btn = v.findViewById(R.id.FAQ_btn);
+        about_app_btn = v.findViewById(R.id.about_app_btn);
+        settings_btn = v.findViewById(R.id.settings_btn);
 
         btn_activity_student.setOnClickListener(this);
         btn_activity_teacher.setOnClickListener(this);
         btn_account_help.setOnClickListener(this);
-        chosen_teachers_btn.setOnClickListener(this);
+        //chosen_teachers_btn.setOnClickListener(this);
         FAQ_btn.setOnClickListener(this);
         about_app_btn.setOnClickListener(this);
         settings_btn.setOnClickListener(this);
@@ -104,7 +104,7 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                                 second_name = ds.getValue().toString();
                                 break;
                             case "location":
-                                text_location.setText(ds.getValue().toString());
+                                //text_location.setText(ds.getValue().toString());
                                 break;
                             case "activity":
                                 activity = ds.getValue().toString();
