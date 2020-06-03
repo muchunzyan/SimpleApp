@@ -1,13 +1,16 @@
 package com.bifexey.simpleapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,9 +46,9 @@ public class AppContacts extends AppCompatActivity {
         };
         ss.setSpan(clickableSpan, 36, 39, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-//        TextView bottom_text = findViewById(R.id.bottom_text);
-////        bottom_text.setText(ss);
-////        bottom_text.setMovementMethod(LinkMovementMethod.getInstance());
-////        bottom_text.setHighlightColor(Color.TRANSPARENT);
+        TextView bottom_text = findViewById(R.id.bottom_text);
+        bottom_text.setText(ss);
+        bottom_text.setMovementMethod(LinkMovementMethod.getInstance());
+        bottom_text.setHighlightColor(Color.TRANSPARENT);
     }
 }

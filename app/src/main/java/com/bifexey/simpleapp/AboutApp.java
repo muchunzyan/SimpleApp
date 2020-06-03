@@ -63,8 +63,8 @@ public class AboutApp extends AppCompatActivity implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.btn_terms_of_use:
-//                Intent intent1 = new Intent(AboutApp.this, AppTermsOfUse.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(AboutApp.this, AppTermsOfUse.class);
+                startActivity(intent1);
                 break;
             case R.id.btn_privacy_policy:
                 Intent intent2 = new Intent(AboutApp.this, AppPrivacyPolicy.class);
