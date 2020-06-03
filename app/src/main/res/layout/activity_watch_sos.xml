@@ -1,9 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchSOS">
+    tools:context=".WatchSOS"
+    android:background="@color/colorWhite">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:src="@drawable/back2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"/>
+
+        <LinearLayout
+            android:id="@+id/W_t_sub_lin_lay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/W_SOS_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/colorWhite"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                android:foreground="@drawable/user_icon_account_back"/>
+
+            <TextView
+                android:id="@+id/W_SOS_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ФИО"
+                android:textSize="25sp"
+                android:textColor="#515C6F"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/W_SOS_btn_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingHorizontal="17dp"
+                android:text="Написать"
+                android:textStyle="bold"
+                android:textColor="#FF6969"
+                android:background="@drawable/write_btn_back"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subject_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/W_t_sub_lin_lay1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Предмет"
+                android:textColor="#50515C6F"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/W_SOS_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Предмет"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subject_name_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/subject_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название предмета"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_SOS_subjectName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Название предмета"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pod_subject_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/subject_name_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Топик"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_SOS_subjectTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Топик"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/location_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/pod_subject_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Корпус"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_SOS_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Корпус"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/date_time_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/location_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата и время"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_SOS_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Дата и время"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/date_time_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий о предмете"
+                android:textSize="13sp"
+                android:textColor="#50515C6F" />
+
+            <TextView
+                android:id="@+id/W_SOS_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий о предмете"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/price_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/comment_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена"
+                android:textSize="13sp"
+                android:textColor="#50515C6F" />
+
+            <TextView
+                android:id="@+id/W_SOS_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+
