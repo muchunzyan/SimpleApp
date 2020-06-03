@@ -1,13 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.teacherFilterSearch.TeacherSearchFilterFragment">
+    android:background="@color/colorBackGround">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/filter_info_lay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/title_lin_lay"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/subject_text"
+                android:text="SOS запросы"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#515C6F"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#C9C8CD"
+            android:layout_below="@id/title_lin_lay"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/divider"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="2dp"
+                android:layout_height="90dp"
+                android:background="#FF6969"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:id="@+id/lin_lay_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/discard_filter"
+                android:layout_toEndOf="@+id/line"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Предмет: "
+                        android:textColor="#FF6969"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/filter_subject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:text=""
+                        android:textColor="#515C6F"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Места занятий: "
+                        android:textColor="#FF6969"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/filter_places"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:text=""
+                        android:textColor="#515C6F"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Цена: "
+                        android:textColor="#FF6969"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/filter_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:text=""
+                        android:textColor="#515C6F"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/discard_filter"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/circle_close"
+                android:layout_marginHorizontal="23dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C9C8CD"
+        android:layout_below="@id/filter_info_lay"/>
+
+    <ListView
+        android:id="@+id/teacher_search_list_of_subjects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/btn_teacher_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фильтр"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/create_request_btn_corners"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:paddingHorizontal="30dp"/>
+</RelativeLayout>
+
