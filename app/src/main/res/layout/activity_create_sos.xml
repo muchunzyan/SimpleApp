@@ -1,9 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateSOS">
+    android:background="@color/colorBackGround">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/title_lin_lay"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/SOS_title_text"
+            android:text="SOS помощь"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#515C6F"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:src="@drawable/close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C9C8CD"
+        android:layout_below="@id/title_lin_lay"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackGround"
+        android:layout_below="@+id/divider">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SOS_subject_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Предмет"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <RelativeLayout
+                android:id="@+id/subjects_spinner_r_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SOS_subject_name_text">
+
+                <Spinner
+                    android:id="@+id/SOS_subject_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/colorWhite"
+                    android:paddingHorizontal="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arr_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/SOS_edit_subject_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/subjects_spinner_r_lay"
+                android:inputType="text"
+                android:hint="Раздел"
+                android:background="@color/colorWhite"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="7dp"/>
+
+            <EditText
+                android:id="@+id/SOS_edit_topic"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/SOS_edit_subject_name"
+                android:inputType="text"
+                android:hint="Тема"
+                android:background="@color/colorWhite"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"/>
+
+            <TextView
+                android:id="@+id/SOS_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Адрес"
+                android:layout_below="@+id/SOS_edit_topic"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <RelativeLayout
+                android:id="@+id/SOS_locations_spin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SOS_location_text">
+
+                <Spinner
+                    android:id="@+id/SOS_locations_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/colorWhite"
+                    android:paddingHorizontal="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arr_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/SOS_when_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата занятий"
+                android:layout_below="@+id/SOS_locations_spin_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <Button
+                android:id="@+id/SOS_btn_today"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorWhite"
+                android:text="🔥Сегодня🔥"
+                android:textSize="15sp"
+                android:textColor="#FF6969"
+                android:layout_below="@+id/SOS_when_text"/>
+
+            <TextView
+                android:id="@+id/SOS_or_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="или"
+                android:textSize="13sp"
+                android:textColor="#B9B9B9"
+                android:layout_below="@+id/SOS_btn_today"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="4dp"/>
+
+            <Button
+                android:id="@+id/SOS_btn_choose_date"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorWhite"
+                android:text="Выбрать дату"
+                android:textColor="#515C6F"
+                android:textSize="15sp"
+                android:layout_below="@+id/SOS_or_text"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"/>
+
+            <TextView
+                android:id="@+id/SOS_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Время"
+                android:layout_below="@+id/SOS_btn_choose_date"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <Button
+                android:id="@+id/SOS_btn_choose_time"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorWhite"
+                android:text="Выбрать время"
+                android:textColor="#515C6F"
+                android:textSize="15sp"
+                android:layout_below="@+id/SOS_time_text"
+                android:layout_marginBottom="7dp"
+                android:gravity="start|center_vertical"
+                android:paddingHorizontal="20dp"/>
+
+            <TextView
+                android:id="@+id/SOS_price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена"
+                android:layout_below="@+id/SOS_btn_choose_time"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <EditText
+                android:id="@+id/SOS_edit_price"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/SOS_price_text"
+                android:inputType="number"
+                android:hint="Цена"
+                android:background="@color/colorWhite"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"/>
+
+            <TextView
+                android:id="@+id/SOS_comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий"
+                android:layout_below="@+id/SOS_edit_price"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="7dp"
+                android:textSize="17sp"
+                android:textColor="#515C6F"/>
+
+            <EditText
+                android:id="@+id/SOS_edit_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SOS_comment_text"
+                android:inputType="text"
+                android:hint="Комментарий"
+                android:gravity="top"
+                android:background="@color/colorWhite"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"/>
+
+            <LinearLayout
+                android:id="@+id/SOS_btn_publish"
+                android:layout_width="280dp"
+                android:layout_height="45dp"
+                android:background="@drawable/sign_out_btn_back"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/SOS_edit_comment"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/SOS_btn_publish_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Создать"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginStart="90dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/white_btn_go2"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
