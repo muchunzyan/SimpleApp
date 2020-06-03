@@ -1,9 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchTeacherProfile">
+    tools:context=".WatchTeacherProfile"
+    android:background="@color/colorWhite">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:src="@drawable/back2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:id="@+id/W_T_delete_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/bin"/>
+
+        <LinearLayout
+            android:id="@+id/W_t_sub_lin_lay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/W_T_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/colorWhite"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                android:foreground="@drawable/user_icon_account_back"/>
+
+            <TextView
+                android:id="@+id/W_T_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ФИО"
+                android:textSize="25sp"
+                android:textColor="#515C6F"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/W_T_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Корпус"
+                android:textColor="#515C6F"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/W_T_chat_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingHorizontal="17dp"
+                android:text="Написать"
+                android:textStyle="bold"
+                android:textColor="#FF6969"
+                android:background="@drawable/write_btn_back"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/W_T_teacher_subjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Все предметы учителя"
+                android:textColor="#006FFF"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/W_t_sub_lin_lay1"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/person" />
+
+        <LinearLayout
+            android:id="@+id/teacher_info_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/W_t_sub_lin_lay1">
+
+            <TextView
+                android:id="@+id/W_T_about_teacher_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Обо мне"
+                android:textColor="#50515C6F"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/W_T_about_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Информация об учителе"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/place"
+            android:layout_below="@+id/teacher_info_lay"/>
+
+        <LinearLayout
+            android:id="@+id/teacher_places_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/teacher_info_lay">
+
+            <TextView
+                android:id="@+id/W_T_where_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Место"
+                android:textSize="14sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_T_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+
