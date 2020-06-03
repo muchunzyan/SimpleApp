@@ -59,8 +59,8 @@ public class EachFAQ extends AppCompatActivity {
         answers.add("Нет, это исключено. Приложение не может распространять информацию о своих пользователях. Если желаете подробнее ознакомится с политикой конфиденциальности приложения, то перейдите в раздел “о приложении” в вашем профиле, а затем в раздел “политика конфиденциальности”.");
         answers.add("В этом вопросе все зависит от вас и цен, которые вы установили за ваши услуги. В среднем репетиторы со стажем по Москве берут от 1000 до 1500 за час. Если вы установите ценник, например, в 700 рублей в час и будете заниматься со студентами хотя бы 2 часа в день, то заработаете целых 42000 за месяц, а это еще без учета того, сколько вы можете заработать оказывая быструю помощь в разделе “SOS”!  Звучит неплохо, не так ли!");
 
-//        e_FAQ_question = findViewById(R.id.e_FAQ_question);
-//        e_FAQ_answer = findViewById(R.id.e_FAQ_answer);
+        e_FAQ_question = findViewById(R.id.e_FAQ_question);
+        e_FAQ_answer = findViewById(R.id.e_FAQ_answer);
         btn_back = findViewById(R.id.btn_back);
 
         btn_back.setOnClickListener(new View.OnClickListener() {

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EachFAQ"></activity>
+        <activity android:name=".AboutApp"></activity>
+        <activity android:name=".EachFAQ" />
         <activity android:name=".FAQList" />
         <activity android:name=".AddSubjectForm" />
         <activity android:name=".MySubjects" />
