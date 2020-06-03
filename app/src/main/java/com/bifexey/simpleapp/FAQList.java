@@ -1,7 +1,9 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -47,18 +49,18 @@ public class FAQList extends AppCompatActivity {
         questions.add("Может ли приложение предоставить мою личную информацию сторонним лицам?");
         questions.add("Как много я могу заработать за месяц?");
 
-        //FAQ_list = findViewById(R.id.FAQ_list);
+        FAQ_list = findViewById(R.id.FAQ_list);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(FAQList.this, android.R.layout.simple_list_item_1, questions);
         FAQ_list.setAdapter(adapter);
 
-//        FAQ_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(FAQList.this, EachFAQ.class);
-//                intent.putExtra("index", position);
-//                startActivity(intent);
-//            }
-//        });
+        FAQ_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(FAQList.this, EachFAQ.class);
+                intent.putExtra("index", position);
+                startActivity(intent);
+            }
+        });
     }
 }
