@@ -9,8 +9,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.ui.SOS.SOS_Fragment;
 import com.bifexey.simpleapp.ui.account.AccountStudentFragment;
+import com.bifexey.simpleapp.ui.chat.ChatFragment;
+import com.bifexey.simpleapp.ui.search.SearchFragment;
 import com.bifexey.simpleapp.ui.teacherAccount.AccountTeacherFragment;
+import com.bifexey.simpleapp.ui.teacherFilterSearch.TeacherSearchFilterFragment;
+import com.bifexey.simpleapp.ui.teacherSearch.TeacherSearchFragment;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -186,21 +191,21 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
 
         if (activity != null) {
             switch (menuItem.getItemId()) {
-//                case R.id.navigation_SOS:
-//                    fragment = new SOS_Fragment();
-//                    break;
-//                case R.id.navigation_search:
-//                    if (activity.equals("teacher"))
-//                        if (is_filtered)
-//                            fragment = new TeacherSearchFilterFragment();
-//                        else
-//                            fragment = new TeacherSearchFragment();
-//                    else if (activity.equals("student"))
-//                        fragment = new SearchFragment();
-//                    break;
-//                case R.id.navigation_chat:
-//                    fragment = new ChatFragment();
-//                    break;
+                case R.id.navigation_SOS:
+                    fragment = new SOS_Fragment();
+                    break;
+                case R.id.navigation_search:
+                    if (activity.equals("teacher"))
+                        if (is_filtered)
+                            fragment = new TeacherSearchFilterFragment();
+                        else
+                            fragment = new TeacherSearchFragment();
+                    else if (activity.equals("student"))
+                        fragment = new SearchFragment();
+                    break;
+                case R.id.navigation_chat:
+                    fragment = new ChatFragment();
+                    break;
                 case R.id.navigation_account:
                     if (activity.equals("teacher"))
                         fragment = new AccountTeacherFragment();

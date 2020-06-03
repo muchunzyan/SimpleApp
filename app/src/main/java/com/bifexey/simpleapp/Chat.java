@@ -1,6 +1,7 @@
 package com.bifexey.simpleapp;
 
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -145,17 +146,17 @@ public class Chat extends AppCompatActivity implements View.OnClickListener {
         adapter = new FirebaseListAdapter<ChatMessage>(options){
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
-//                TextView messageText = v.findViewById(R.id.message_text);
-//                TextView messagePhoneNumber = v.findViewById(R.id.message_phone_number);
-//                TextView messageTime = v.findViewById(R.id.message_time);
-//
-//                if (model.getMessagePhoneNumber().equals(user.getPhoneNumber()))
-//                    messagePhoneNumber.setText("Вы");
-//                else
-//                    messagePhoneNumber.setText(model.getFirst_name());
-//
-//                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
-//                messageText.setText(model.getMessageText());
+                TextView messageText = v.findViewById(R.id.message_text);
+                TextView messagePhoneNumber = v.findViewById(R.id.message_phone_number);
+                TextView messageTime = v.findViewById(R.id.message_time);
+
+                if (model.getMessagePhoneNumber().equals(user.getPhoneNumber()))
+                    messagePhoneNumber.setText("Вы");
+                else
+                    messagePhoneNumber.setText(model.getFirst_name());
+
+                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
+                messageText.setText(model.getMessageText());
             }
         };
 
