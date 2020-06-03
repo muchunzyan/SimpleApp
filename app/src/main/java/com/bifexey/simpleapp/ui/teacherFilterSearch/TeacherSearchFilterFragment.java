@@ -1,5 +1,6 @@
 package com.bifexey.simpleapp.ui.teacherFilterSearch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.Filter;
 import com.bifexey.simpleapp.R;
 import com.bifexey.simpleapp.SOSAd;
 import com.bifexey.simpleapp.SOSAdAdapter;
@@ -55,12 +57,12 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.teacher_search_filter_fragment, null);
 
-//        teacher_search_list_of_subjects = v.findViewById(R.id.teacher_search_list_of_subjects);
-//        btn_teacher_filter = v.findViewById(R.id.btn_teacher_filter);
-//        filter_subject = v.findViewById(R.id.filter_subject);
-//        filter_places = v.findViewById(R.id.filter_places);
-//        filter_price = v.findViewById(R.id.filter_price);
-//        discard_filter = v.findViewById(R.id.discard_filter);
+        teacher_search_list_of_subjects = v.findViewById(R.id.teacher_search_list_of_subjects);
+        btn_teacher_filter = v.findViewById(R.id.btn_teacher_filter);
+        filter_subject = v.findViewById(R.id.filter_subject);
+        filter_places = v.findViewById(R.id.filter_places);
+        filter_price = v.findViewById(R.id.filter_price);
+        discard_filter = v.findViewById(R.id.discard_filter);
 
         btn_teacher_filter.setOnClickListener(this);
         discard_filter.setOnClickListener(this);
@@ -72,16 +74,16 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_teacher_filter:
-//                Intent intent = new Intent(getActivity(), Filter.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.discard_filter:
+        switch (v.getId()){
+            case R.id.btn_teacher_filter:
+                Intent intent = new Intent(getActivity(), Filter.class);
+                startActivity(intent);
+                break;
+            case R.id.discard_filter:
 //                Intent intent1 = new Intent(getActivity(), MainPage.class);
 //                startActivity(intent1);
-//                break;
-//        }
+                break;
+        }
     }
 
     private void displaySOSAds(){
