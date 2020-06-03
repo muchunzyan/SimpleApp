@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,12 +64,12 @@ public class AddSubjectForm extends AppCompatActivity implements View.OnClickLis
 
         came_from_register = getIntent().getIntExtra("from_reg", 0);
 
-//        subjects_spinner_r = findViewById(R.id.subjects_spinner_r);
-//        pod_subjects_spinner_r = findViewById(R.id.pod_subjects_spinner_r);
-//        edit_text_hour_cost_r = findViewById(R.id.edit_text_hour_cost_r);
-//        edit_text_comment_r = findViewById(R.id.edit_text_comment_r);
-//        btn_ok = findViewById(R.id.btn_ok);
-//        btn_back = findViewById(R.id.btn_back);
+        subjects_spinner_r = findViewById(R.id.subjects_spinner_r);
+        pod_subjects_spinner_r = findViewById(R.id.pod_subjects_spinner_r);
+        edit_text_hour_cost_r = findViewById(R.id.edit_text_hour_cost_r);
+        edit_text_comment_r = findViewById(R.id.edit_text_comment_r);
+        btn_ok = findViewById(R.id.btn_ok);
+        btn_back = findViewById(R.id.btn_back);
 
         btn_ok.setOnClickListener(this);
         btn_back.setOnClickListener(this);
@@ -239,45 +240,45 @@ public class AddSubjectForm extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_ok:
-//                if (edit_text_hour_cost_r.getText().toString().equals("") || edit_text_comment_r.getText().toString().trim().equals("") ||
-//                        subjects_spinner_r.getSelectedItem().toString().equals("Предмет") || pod_subjects_spinner_r.getSelectedItem().toString().equals("Раздел") || pod_subjects_spinner_r.getSelectedItem().toString().equals("Язык обучения")){
-//                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                    String hourCost = Integer.toString(Integer.parseInt(edit_text_hour_cost_r.getText().toString()));
-//                    String commentReg = edit_text_comment_r.getText().toString().trim();
-//
-//                    DatabaseReference myRefCurrentUserTeacherSubjectsPush = myRefCurrentUserTeacherInfo.child("subjects").push();
-//
-//                    myRefCurrentUserTeacherSubjectsPush.setValue(new SubjectFormItem(
-//                            first_name + " " + second_name,
-//                            subjects_spinner_r.getSelectedItem().toString(),
-//                            pod_subjects_spinner_r.getSelectedItem().toString(),
-//                            hourCost, commentReg, myRefCurrentUserTeacherSubjectsPush.getKey(),
-//                            user.getPhoneNumber()));
-//
-//                    ChooseTreeSubject(subjects_spinner_r.getSelectedItem().toString());
-//
-//                    AllTeacherAdsPodSubject.child(myRefCurrentUserTeacherSubjectsPush.getKey()).setValue(new SubjectFormItem(
-//                            first_name + " " + second_name,
-//                            subjects_spinner_r.getSelectedItem().toString(),
-//                            pod_subjects_spinner_r.getSelectedItem().toString(),
-//                            hourCost, commentReg, myRefCurrentUserTeacherSubjectsPush.getKey(),
-//                            user.getPhoneNumber()));
-//
-//                    if (came_from_register != 0)
-//                        remakeIntentInfoAndStartTRegister();
-//                    else {
-//                        finish();
-//                    }
-//                }
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.btn_ok:
+                if (edit_text_hour_cost_r.getText().toString().equals("") || edit_text_comment_r.getText().toString().trim().equals("") ||
+                        subjects_spinner_r.getSelectedItem().toString().equals("Предмет") || pod_subjects_spinner_r.getSelectedItem().toString().equals("Раздел") || pod_subjects_spinner_r.getSelectedItem().toString().equals("Язык обучения")){
+                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    String hourCost = Integer.toString(Integer.parseInt(edit_text_hour_cost_r.getText().toString()));
+                    String commentReg = edit_text_comment_r.getText().toString().trim();
+
+                    DatabaseReference myRefCurrentUserTeacherSubjectsPush = myRefCurrentUserTeacherInfo.child("subjects").push();
+
+                    myRefCurrentUserTeacherSubjectsPush.setValue(new SubjectFormItem(
+                            first_name + " " + second_name,
+                            subjects_spinner_r.getSelectedItem().toString(),
+                            pod_subjects_spinner_r.getSelectedItem().toString(),
+                            hourCost, commentReg, myRefCurrentUserTeacherSubjectsPush.getKey(),
+                            user.getPhoneNumber()));
+
+                    ChooseTreeSubject(subjects_spinner_r.getSelectedItem().toString());
+
+                    AllTeacherAdsPodSubject.child(myRefCurrentUserTeacherSubjectsPush.getKey()).setValue(new SubjectFormItem(
+                            first_name + " " + second_name,
+                            subjects_spinner_r.getSelectedItem().toString(),
+                            pod_subjects_spinner_r.getSelectedItem().toString(),
+                            hourCost, commentReg, myRefCurrentUserTeacherSubjectsPush.getKey(),
+                            user.getPhoneNumber()));
+
+                    if (came_from_register != 0)
+                        remakeIntentInfoAndStartTRegister();
+                    else {
+                        finish();
+                    }
+                }
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 }
 

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.FAQList;
 import com.bifexey.simpleapp.FlaggedTeachers;
 import com.bifexey.simpleapp.R;
 import com.bifexey.simpleapp.TeacherRegistration;
@@ -70,7 +71,7 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
         btn_activity_student.setOnClickListener(this);
         btn_activity_teacher.setOnClickListener(this);
         btn_account_help.setOnClickListener(this);
-        //chosen_teachers_btn.setOnClickListener(this);
+        chosen_teachers_btn.setOnClickListener(this);
         FAQ_btn.setOnClickListener(this);
         about_app_btn.setOnClickListener(this);
         settings_btn.setOnClickListener(this);
@@ -153,8 +154,8 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                 startActivity(intent4);
                 break;
             case R.id.FAQ_btn:
-//                Intent intent1 = new Intent(getActivity(), FAQList.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), FAQList.class);
+                startActivity(intent1);
                 break;
             case R.id.about_app_btn:
 //                Intent intent2 = new Intent(getActivity(), AboutApp.class);
