@@ -155,8 +155,8 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
                 bundle.putBoolean("co_working", getIntent().getBooleanExtra("co_working", false));
                 bundle.putString("price_from", getIntent().getStringExtra("price_from"));
                 bundle.putString("price_to", getIntent().getStringExtra("price_to"));
-                //TeacherSearchFilterFragment tsf = new TeacherSearchFilterFragment();
-                //tsf.setArguments(bundle);
+                TeacherSearchFilterFragment tsf = new TeacherSearchFilterFragment();
+                tsf.setArguments(bundle);
 
                 is_filtered = true;
             }
@@ -232,4 +232,3 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
     public void onBackPressed() {
     }
 }
-

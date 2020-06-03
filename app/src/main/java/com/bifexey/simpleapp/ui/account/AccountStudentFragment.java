@@ -1,6 +1,5 @@
 package com.bifexey.simpleapp.ui.account;
 
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,10 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bifexey.simpleapp.AboutApp;
-import com.bifexey.simpleapp.AccountSettings;
 import com.bifexey.simpleapp.FAQList;
 import com.bifexey.simpleapp.FlaggedTeachers;
 import com.bifexey.simpleapp.R;
+import com.bifexey.simpleapp.AccountSettings;
 import com.bifexey.simpleapp.TeacherRegistration;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -57,7 +56,7 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_teacher_account, null);
+        View v = inflater.inflate(R.layout.fragment_student_account, null);
 
         text_name = v.findViewById(R.id.text_name);
         text_location = v.findViewById(R.id.text_location);
