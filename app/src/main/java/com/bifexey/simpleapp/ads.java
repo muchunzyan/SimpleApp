@@ -1,8 +1,5 @@
 package com.bifexey.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -53,7 +52,7 @@ public class ads extends AppCompatActivity {
 
         btn_back = findViewById(R.id.btn_back);
         subject_text = findViewById(R.id.subject_text);
-        //list_teacher_subjects = findViewById(R.id.list_teacher_subjects);
+        list_teacher_subjects = findViewById(R.id.list_teacher_subjects);
 
         subject_text.setText(sub_name);
 
@@ -64,14 +63,14 @@ public class ads extends AppCompatActivity {
             }
         });
 
-//        FirebaseListOptions<SubjectFormItem> options = new FirebaseListOptions.Builder<SubjectFormItem>()
-//                .setQuery(AllTeacherAdsCurrentSubject, SubjectFormItem.class)
-//                .setLayout(R.layout.current_subject_teacher_ads)
-//                .build();
-//
-//        adapter = new FirebaseListAdapter<SubjectFormItem>(options){
-//            @Override
-//            protected void populateView(View v, SubjectFormItem model, int position) {
+        FirebaseListOptions<SubjectFormItem> options = new FirebaseListOptions.Builder<SubjectFormItem>()
+                .setQuery(AllTeacherAdsCurrentSubject, SubjectFormItem.class)
+                .setLayout(R.layout.current_subject_teacher_ads)
+                .build();
+
+        adapter = new FirebaseListAdapter<SubjectFormItem>(options){
+            @Override
+            protected void populateView(View v, SubjectFormItem model, int position) {
 //                ImageView teacher_image = v.findViewById(R.id.teacher_image);
 //                TextView teacher_name = v.findViewById(R.id.teacher_name);
 //                TextView teacher_pod_subject = v.findViewById(R.id.teacher_pod_subject);
@@ -87,23 +86,23 @@ public class ads extends AppCompatActivity {
 //                phone_numbers.add(model.getPhone_number());
 //                keys.add(model.getKey());
 //                subjects.add(model.getSubject());
-//            }
-//        };
-//
-//        adapter.startListening();
-//
-//        list_teacher_subjects.setAdapter(adapter);
-//
-//        list_teacher_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            }
+        };
+
+        adapter.startListening();
+
+        list_teacher_subjects.setAdapter(adapter);
+
+        list_teacher_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Intent intent = new Intent(ads.this, WatchTeacherSubject.class);
 //                intent.putExtra("teacher_phone_number", phone_numbers.get(position));
 //                intent.putExtra("teacher_ad_key", keys.get(position));
 //                intent.putExtra("teacher_ad_sub", subjects.get(position));
 //                startActivity(intent);
-//            }
-//        });
+            }
+        });
     }
 
     private static String removeCharAt(String s, int pos) {

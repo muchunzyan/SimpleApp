@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,9 +24,9 @@ public class FillOther extends AppCompatActivity implements View.OnClickListener
 
         Log.d(TAG, "other activity");
 
-//        edit_other = findViewById(R.id.edit_other);
-//        btn_other_ok = findViewById(R.id.btn_other_ok);
-//        btn_back = findViewById(R.id.btn_back);
+        edit_other = findViewById(R.id.edit_other);
+        btn_other_ok = findViewById(R.id.btn_other_ok);
+        btn_back = findViewById(R.id.btn_back);
 
         btn_other_ok.setOnClickListener(this);
         btn_back.setOnClickListener(this);
@@ -33,17 +34,17 @@ public class FillOther extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_other_ok:
-//                if (edit_other.getText().toString().trim().equals(""))
-//                    Toast.makeText(getApplicationContext(), "Вы ничего не написали", Toast.LENGTH_LONG).show();
-//                else
-//                    remakeIntentInfoAndStartTRegister();
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.btn_other_ok:
+                if (edit_other.getText().toString().trim().equals(""))
+                    Toast.makeText(getApplicationContext(), "Вы ничего не написали", Toast.LENGTH_LONG).show();
+                else
+                    remakeIntentInfoAndStartTRegister();
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 
     private void remakeIntentInfoAndStartTRegister(){
