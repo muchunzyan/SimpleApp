@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackGround"
     tools:context=".AccountSettings">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/title_lin_lay"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/subject_text"
+            android:text="Настройки"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#515C6F"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C9C8CD"
+        android:layout_below="@id/title_lin_lay"/>
+
+    <RelativeLayout
+        android:id="@+id/lay_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_below="@+id/divider">
+
+        <LinearLayout
+            android:id="@+id/lay_image"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <ImageView
+                android:id="@+id/change_photo_im"
+                android:background="@color/colorWhite"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                android:foreground="@drawable/user_icon_back"
+                android:layout_width="65dp"
+                android:layout_height="65dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить"
+                android:textColor="#006FFF"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="1dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/lay_image"
+            android:text="Введите своё имя, фамилию и опционально добавьте фото на свой профиль"
+            android:textSize="14sp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="22dp"/>
+
+        <EditText
+            android:id="@+id/edit_second_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lay_image"
+            android:hint="Фамилия"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#515C6F"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/edit_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_second_name"
+            android:hint="Имя"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#515C6F"
+            android:layout_marginStart="16dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay_user_info"
+        android:text="Адрес"
+        android:textColor="#515C6F"
+        android:textSize="19sp"
+        android:layout_marginTop="38dp"
+        android:layout_marginStart="16dp"/>
+
+    <Spinner
+        android:id="@+id/location_spinner"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/address_text"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:background="@color/colorWhite"/>
+
+    <LinearLayout
+        android:id="@+id/btn_accept_changes"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:background="@drawable/submit_btn_back"
+        android:layout_marginBottom="13dp"
+        android:layout_above="@+id/btn_signOut"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Подтвердить"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="75dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/white_btn_go"
+            android:layout_marginEnd="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_signOut"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:background="@drawable/sign_out_btn_back"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выйти"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="75dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/white_close_btn"
+            android:layout_marginEnd="15dp"/>
+    </LinearLayout>
+</RelativeLayout>
+
