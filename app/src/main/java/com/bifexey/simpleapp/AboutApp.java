@@ -1,5 +1,6 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -21,10 +22,10 @@ public class AboutApp extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_app);
 
-//        btn_contacts = findViewById(R.id.btn_contacts);
-//        btn_terms_of_use = findViewById(R.id.btn_terms_of_use);
-//        btn_privacy_policy = findViewById(R.id.btn_privacy_policy);
-//        btn_back = findViewById(R.id.btn_back);
+        btn_contacts = findViewById(R.id.btn_contacts);
+        btn_terms_of_use = findViewById(R.id.btn_terms_of_use);
+        btn_privacy_policy = findViewById(R.id.btn_privacy_policy);
+        btn_back = findViewById(R.id.btn_back);
 
         btn_contacts.setOnClickListener(this);
         btn_terms_of_use.setOnClickListener(this);
@@ -35,7 +36,7 @@ public class AboutApp extends AppCompatActivity implements View.OnClickListener 
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
-                //startActivity(new Intent(AboutApp.this, AppPrivacyPolicy.class));
+                startActivity(new Intent(AboutApp.this, AppPrivacyPolicy.class));
             }
             @Override
             public void updateDrawState(TextPaint ds) {
