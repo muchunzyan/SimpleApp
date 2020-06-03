@@ -2,7 +2,9 @@ package com.bifexey.simpleapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -204,149 +207,149 @@ public class CreateSOS extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.SOS_btn_choose_time:
-//                int hourOfDay, minute;
-//
-//                if (key == null) {
-//                    hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
-//                    minute = calendar.get(Calendar.MINUTE);
-//                }
-//                else {
-//                    hourOfDay = FinHourOfDay;
-//                    minute = FinMinute;
-//                }
-//
-//                TimePickerDialog tDialog = new TimePickerDialog(
-//                        CreateSOS.this,
-//                        TimeSetListener,
-//                        hourOfDay, minute,
-//                        DateFormat.is24HourFormat(CreateSOS.this)
-//                );
-//
-//                tDialog.show();
-//
-//                SOS_btn_choose_time.setText(addZero(Integer.toString(hourOfDay)) + ":" +
-//                        addZero(Integer.toString(minute)));
-//
-//                FinHourOfDay = hourOfDay;
-//                FinMinute = minute;
-//                break;
-//            case R.id.SOS_btn_choose_date:
-//                int year, month, day;
-//
-//                if (key == null) {
-//                    year = calendar.get(Calendar.YEAR);
-//                    month = calendar.get(Calendar.MONTH);
-//                    day = calendar.get(Calendar.DAY_OF_MONTH);
-//                }
-//                else {
-//                    year = FinYear;
-//                    month = FinMonth;
-//                    day = FinDayOfMonth;
-//                }
-//
-//                DatePickerDialog dDialog = new DatePickerDialog(
-//                        CreateSOS.this,
-//                        DataSetListener,
-//                        year, month, day
-//                );
-//
-//                dDialog.show();
-//
-//                SOS_btn_choose_date.setBackgroundColor(getResources().getColor(R.color.colorPurple));
-//                SOS_btn_choose_date.setTextColor(getResources().getColor(R.color.colorWhite));
-//                SOS_btn_today.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-//                SOS_btn_today.setTextColor(getResources().getColor(R.color.colorPrimary));
-//                break;
-//            case R.id.SOS_btn_today:
-//                SOS_btn_choose_date.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-//                SOS_btn_choose_date.setTextColor(getResources().getColor(R.color.colorPrimary));
-//                SOS_btn_today.setBackgroundColor(getResources().getColor(R.color.colorPurple));
-//                SOS_btn_today.setTextColor(getResources().getColor(R.color.colorWhite));
-//                SOS_btn_choose_date.setText("Выбрать дату");
-//
-//                FinYear = calendar.get(Calendar.YEAR);
-//                FinMonth = calendar.get(Calendar.MONTH) + 1;
-//                FinDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-//                break;
-//            case R.id.SOS_btn_publish:
-//                String SOS_subjectFromSpinner = SOS_subject_spinner.getSelectedItem().toString();
-//                String SOS_locationFromSpinner = SOS_locations_spinner.getSelectedItem().toString();
-//                String SOS_subjectName = SOS_edit_subject_name.getText().toString().trim();
-//                String SOS_subjectTopic = SOS_edit_topic.getText().toString().trim();
-//                String SOS_price = "";
-//                if (!SOS_edit_price.getText().toString().equals(""))
-//                    SOS_price = Integer.toString(Integer.parseInt(SOS_edit_price.getText().toString()));
-//                String SOS_comment = SOS_edit_comment.getText().toString().trim();
-//
-//                if (SOS_subjectFromSpinner.equals("Предмет") || SOS_locationFromSpinner.equals("Корпус") ||
-//                        SOS_subjectName.equals("") || SOS_subjectTopic.equals("") || FinYear == 0 || FinHourOfDay == 100 ||
-//                        SOS_price.equals("")){
-//                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (!checkTimeAndDate(FinYear, FinMonth, FinDayOfMonth, FinHourOfDay, FinMinute)){
-//                    Toast.makeText(getApplicationContext(), "Неподходящее время или дата", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (SOS_subjectName.length() > 50 || SOS_subjectTopic.length() > 50 ||
-//                        SOS_price.length() > 10 || SOS_comment.length() > 80){
-//                    Toast.makeText(getApplicationContext(), "Слишком длинный текст", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                    DatabaseReference myRefCurrentUserSOSAdsPush = myRefCurrentUserSOSAds.push();
-//                    String idKey = myRefCurrentUserSOSAdsPush.getKey();
-//
-//                    if (key != null) {
-//                        myRefCurrentUserSOSAdsDelete = myRefCurrentUserSOSAds.child(key);
-//
-//                        myRefCurrentUserSOSAdsDelete.setValue(new SOSAd(SOS_first_name, SOS_second_name,
-//                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
-//                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
-//                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
-//                                addZero(Integer.toString(FinMinute)),
-//                                SOS_price, SOS_comment, user.getPhoneNumber(), key));
-//
-//
-//                        myRefCurrentUserSOSAdsDelete = myRef.child("AllSOSAds").child(key);
-//
-//                        myRefCurrentUserSOSAdsDelete.setValue(new SOSAd(SOS_first_name, SOS_second_name,
-//                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
-//                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
-//                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
-//                                addZero(Integer.toString(FinMinute)),
-//                                SOS_price, SOS_comment, user.getPhoneNumber(), key));
-//                    }else {
-//                        myRefCurrentUserSOSAdsPush.setValue(new SOSAd(SOS_first_name, SOS_second_name,
-//                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
-//                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
-//                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
-//                                addZero(Integer.toString(FinMinute)),
-//                                SOS_price, SOS_comment, user.getPhoneNumber(), idKey));
-//
-//                        myRefSOSAds.child(myRefCurrentUserSOSAdsPush.getKey()).setValue(new SOSAd(SOS_first_name, SOS_second_name,
-//                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
-//                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
-//                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
-//                                addZero(Integer.toString(FinMinute)),
-//                                SOS_price, SOS_comment, user.getPhoneNumber(), idKey));
-//                    }
-//
-//                    Toast.makeText(getApplicationContext(), "Сохранено", Toast.LENGTH_SHORT).show();
-//
-//                    if (key != null){
-//                        Intent intent = new Intent(CreateSOS.this, EditSOS.class);
-//                        intent.putExtra("key", key);
-//                        startActivity(intent);
-//                        finish();
-//                    }else {
-//                        finish();
-//                    }
-//                }
-//                break;
-//            case R.id.btn_close:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.SOS_btn_choose_time:
+                int hourOfDay, minute;
+
+                if (key == null) {
+                    hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+                    minute = calendar.get(Calendar.MINUTE);
+                }
+                else {
+                    hourOfDay = FinHourOfDay;
+                    minute = FinMinute;
+                }
+
+                TimePickerDialog tDialog = new TimePickerDialog(
+                        CreateSOS.this,
+                        TimeSetListener,
+                        hourOfDay, minute,
+                        DateFormat.is24HourFormat(CreateSOS.this)
+                );
+
+                tDialog.show();
+
+                SOS_btn_choose_time.setText(addZero(Integer.toString(hourOfDay)) + ":" +
+                        addZero(Integer.toString(minute)));
+
+                FinHourOfDay = hourOfDay;
+                FinMinute = minute;
+                break;
+            case R.id.SOS_btn_choose_date:
+                int year, month, day;
+
+                if (key == null) {
+                    year = calendar.get(Calendar.YEAR);
+                    month = calendar.get(Calendar.MONTH);
+                    day = calendar.get(Calendar.DAY_OF_MONTH);
+                }
+                else {
+                    year = FinYear;
+                    month = FinMonth;
+                    day = FinDayOfMonth;
+                }
+
+                DatePickerDialog dDialog = new DatePickerDialog(
+                        CreateSOS.this,
+                        DataSetListener,
+                        year, month, day
+                );
+
+                dDialog.show();
+
+                SOS_btn_choose_date.setBackgroundColor(getResources().getColor(R.color.colorPurple));
+                SOS_btn_choose_date.setTextColor(getResources().getColor(R.color.colorWhite));
+                SOS_btn_today.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                SOS_btn_today.setTextColor(getResources().getColor(R.color.colorPrimary));
+                break;
+            case R.id.SOS_btn_today:
+                SOS_btn_choose_date.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                SOS_btn_choose_date.setTextColor(getResources().getColor(R.color.colorPrimary));
+                SOS_btn_today.setBackgroundColor(getResources().getColor(R.color.colorPurple));
+                SOS_btn_today.setTextColor(getResources().getColor(R.color.colorWhite));
+                SOS_btn_choose_date.setText("Выбрать дату");
+
+                FinYear = calendar.get(Calendar.YEAR);
+                FinMonth = calendar.get(Calendar.MONTH) + 1;
+                FinDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+                break;
+            case R.id.SOS_btn_publish:
+                String SOS_subjectFromSpinner = SOS_subject_spinner.getSelectedItem().toString();
+                String SOS_locationFromSpinner = SOS_locations_spinner.getSelectedItem().toString();
+                String SOS_subjectName = SOS_edit_subject_name.getText().toString().trim();
+                String SOS_subjectTopic = SOS_edit_topic.getText().toString().trim();
+                String SOS_price = "";
+                if (!SOS_edit_price.getText().toString().equals(""))
+                    SOS_price = Integer.toString(Integer.parseInt(SOS_edit_price.getText().toString()));
+                String SOS_comment = SOS_edit_comment.getText().toString().trim();
+
+                if (SOS_subjectFromSpinner.equals("Предмет") || SOS_locationFromSpinner.equals("Корпус") ||
+                        SOS_subjectName.equals("") || SOS_subjectTopic.equals("") || FinYear == 0 || FinHourOfDay == 100 ||
+                        SOS_price.equals("")){
+                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
+                }
+                else if (!checkTimeAndDate(FinYear, FinMonth, FinDayOfMonth, FinHourOfDay, FinMinute)){
+                    Toast.makeText(getApplicationContext(), "Неподходящее время или дата", Toast.LENGTH_SHORT).show();
+                }
+                else if (SOS_subjectName.length() > 50 || SOS_subjectTopic.length() > 50 ||
+                        SOS_price.length() > 10 || SOS_comment.length() > 80){
+                    Toast.makeText(getApplicationContext(), "Слишком длинный текст", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    DatabaseReference myRefCurrentUserSOSAdsPush = myRefCurrentUserSOSAds.push();
+                    String idKey = myRefCurrentUserSOSAdsPush.getKey();
+
+                    if (key != null) {
+                        myRefCurrentUserSOSAdsDelete = myRefCurrentUserSOSAds.child(key);
+
+                        myRefCurrentUserSOSAdsDelete.setValue(new SOSAd(SOS_first_name, SOS_second_name,
+                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
+                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
+                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
+                                addZero(Integer.toString(FinMinute)),
+                                SOS_price, SOS_comment, user.getPhoneNumber(), key));
+
+
+                        myRefCurrentUserSOSAdsDelete = myRef.child("AllSOSAds").child(key);
+
+                        myRefCurrentUserSOSAdsDelete.setValue(new SOSAd(SOS_first_name, SOS_second_name,
+                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
+                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
+                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
+                                addZero(Integer.toString(FinMinute)),
+                                SOS_price, SOS_comment, user.getPhoneNumber(), key));
+                    }else {
+                        myRefCurrentUserSOSAdsPush.setValue(new SOSAd(SOS_first_name, SOS_second_name,
+                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
+                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
+                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
+                                addZero(Integer.toString(FinMinute)),
+                                SOS_price, SOS_comment, user.getPhoneNumber(), idKey));
+
+                        myRefSOSAds.child(myRefCurrentUserSOSAdsPush.getKey()).setValue(new SOSAd(SOS_first_name, SOS_second_name,
+                                SOS_location, SOS_subjectFromSpinner, SOS_locationFromSpinner, SOS_subjectName, SOS_subjectTopic,
+                                addZero(Integer.toString(FinYear)), addZero(Integer.toString(FinMonth)),
+                                addZero(Integer.toString(FinDayOfMonth)), addZero(Integer.toString(FinHourOfDay)),
+                                addZero(Integer.toString(FinMinute)),
+                                SOS_price, SOS_comment, user.getPhoneNumber(), idKey));
+                    }
+
+                    Toast.makeText(getApplicationContext(), "Сохранено", Toast.LENGTH_SHORT).show();
+
+                    if (key != null){
+                        Intent intent = new Intent(CreateSOS.this, EditSOS.class);
+                        intent.putExtra("key", key);
+                        startActivity(intent);
+                        finish();
+                    }else {
+                        finish();
+                    }
+                }
+                break;
+            case R.id.btn_close:
+                finish();
+                break;
+        }
     }
 
     private boolean checkTimeAndDate(int year, int month, int day, int hour, int minute){
