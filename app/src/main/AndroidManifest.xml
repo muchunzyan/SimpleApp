@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FillOther"></activity>
+        <activity android:name=".WatchTeacherSubject"></activity>
+        <activity android:name=".FillOther" />
         <activity android:name=".ChooseMetro" />
         <activity android:name=".WatchSOS" />
         <activity android:name=".Filter" />

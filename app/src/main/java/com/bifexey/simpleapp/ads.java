@@ -1,5 +1,6 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -71,21 +72,21 @@ public class ads extends AppCompatActivity {
         adapter = new FirebaseListAdapter<SubjectFormItem>(options){
             @Override
             protected void populateView(View v, SubjectFormItem model, int position) {
-//                ImageView teacher_image = v.findViewById(R.id.teacher_image);
-//                TextView teacher_name = v.findViewById(R.id.teacher_name);
-//                TextView teacher_pod_subject = v.findViewById(R.id.teacher_pod_subject);
-//                TextView teacher_comment = v.findViewById(R.id.teacher_comment);
-//                TextView teacher_price = v.findViewById(R.id.teacher_price);
-//
-//                downloadImage(teacher_image, model.getPhone_number());
-//                teacher_name.setText(model.getName());
-//                teacher_pod_subject.setText(model.getSpecial_subject());
-//                teacher_comment.setText(model.getComment());
-//                teacher_price.setText("\u20BD" + model.getPrice());
-//
-//                phone_numbers.add(model.getPhone_number());
-//                keys.add(model.getKey());
-//                subjects.add(model.getSubject());
+                ImageView teacher_image = v.findViewById(R.id.teacher_image);
+                TextView teacher_name = v.findViewById(R.id.teacher_name);
+                TextView teacher_pod_subject = v.findViewById(R.id.teacher_pod_subject);
+                TextView teacher_comment = v.findViewById(R.id.teacher_comment);
+                TextView teacher_price = v.findViewById(R.id.teacher_price);
+
+                downloadImage(teacher_image, model.getPhone_number());
+                teacher_name.setText(model.getName());
+                teacher_pod_subject.setText(model.getSpecial_subject());
+                teacher_comment.setText(model.getComment());
+                teacher_price.setText("\u20BD" + model.getPrice());
+
+                phone_numbers.add(model.getPhone_number());
+                keys.add(model.getKey());
+                subjects.add(model.getSubject());
             }
         };
 
@@ -96,11 +97,11 @@ public class ads extends AppCompatActivity {
         list_teacher_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(ads.this, WatchTeacherSubject.class);
-//                intent.putExtra("teacher_phone_number", phone_numbers.get(position));
-//                intent.putExtra("teacher_ad_key", keys.get(position));
-//                intent.putExtra("teacher_ad_sub", subjects.get(position));
-//                startActivity(intent);
+                Intent intent = new Intent(ads.this, WatchTeacherSubject.class);
+                intent.putExtra("teacher_phone_number", phone_numbers.get(position));
+                intent.putExtra("teacher_ad_key", keys.get(position));
+                intent.putExtra("teacher_ad_sub", subjects.get(position));
+                startActivity(intent);
             }
         });
     }
