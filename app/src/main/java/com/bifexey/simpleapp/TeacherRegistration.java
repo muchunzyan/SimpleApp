@@ -1,5 +1,6 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -7,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,9 +46,9 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_registration);
 
-//        subjects_spinner_r = findViewById(R.id.subjects_spinner_r);
-//        edit_text_hour_cost_r = findViewById(R.id.edit_text_hour_cost_r);
-//        edit_text_comment_r = findViewById(R.id.edit_text_comment_r);
+        subjects_spinner_r = findViewById(R.id.subjects_spinner_r);
+        edit_text_hour_cost_r = findViewById(R.id.edit_text_hour_cost_r);
+        edit_text_comment_r = findViewById(R.id.edit_text_comment_r);
         edit_about_teacher = findViewById(R.id.edit_about_teacher);
         btn_to_student = findViewById(R.id.btn_to_student);
         btn_online = findViewById(R.id.btn_online);
@@ -70,99 +72,99 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-//            case R.id.btn_add_subject:
-//                putIntentInfoNewSubject();
-//                break;
-//            case R.id.to_me_text:
-//                if (!to_me)
-//                    putIntentInfoToMe();
-//                else{
-//                    to_me_text.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
-//                    to_me_text.setTextColor(getResources().getColor(R.color.colorBlueBlack));
-//                    to_me_text.setText("У себя");
-//                    to_me = false;
-//                    metro_station = null;
-//                }
-//                break;
-//            case R.id.btn_to_student:
-//                if (!to_student) {
-//                    btn_to_student.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_purple));
-//                    btn_to_student.setTextColor(getResources().getColor(R.color.colorWhite));
-//                    to_student = true;
-//                }
-//                else {
-//                    btn_to_student.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
-//                    btn_to_student.setTextColor(getResources().getColor(R.color.colorBlueBlack));
-//                    to_student = false;
-//                }
-//                break;
-//            case R.id.btn_online:
-//                if (!online) {
-//                    btn_online.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_purple));
-//                    btn_online.setTextColor(getResources().getColor(R.color.colorWhite));
-//                    online = true;
-//                }
-//                else {
-//                    btn_online.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
-//                    btn_online.setTextColor(getResources().getColor(R.color.colorBlueBlack));
-//                    online = false;
-//                }
-//                break;
-//            case R.id.other_text:
-//                if (other == null)
-//                    putIntentInfoOther();
-//                else{
-//                    other_text.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
-//                    other_text.setTextColor(getResources().getColor(R.color.colorBlueBlack));
-//                    other_text.setText("Другое");
-//                    other = null;
-//                }
-//                break;
-//            case R.id.btn_register_teacher:
-//                if (list_subjects.getCount() == 0 || (!to_me && !to_student && !online && other == null) || edit_about_teacher.getText().toString().trim().equals("")){
-//                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                    myRefCurrentUser.child("activity").setValue("teacher");
-//
-//                    if(to_me) {
-//                        myRefCurrentUserTeacherInfoWhere.child("to_me").setValue(to_me);
-//                        myRefCurrentUserTeacherInfoWhere.child("metro_station").setValue(metro_station);
-//                    }
-//                    if(to_student)
-//                        myRefCurrentUserTeacherInfoWhere.child("to_student").setValue(to_student);
-//                    if(online)
-//                        myRefCurrentUserTeacherInfoWhere.child("online").setValue(online);
-//                    if(other != null)
-//                        myRefCurrentUserTeacherInfoWhere.child("other").setValue(other);
-//
-//                    if(!edit_about_teacher.getText().toString().equals(""))
-//                        myRefCurrentUser.child("about_teacher").setValue(edit_about_teacher.getText().toString().trim());
-//
-//                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//                break;
+            case R.id.btn_add_subject:
+                putIntentInfoNewSubject();
+                break;
+            case R.id.to_me_text:
+                if (!to_me)
+                    putIntentInfoToMe();
+                else{
+                    to_me_text.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
+                    to_me_text.setTextColor(getResources().getColor(R.color.colorBlueBlack));
+                    to_me_text.setText("У себя");
+                    to_me = false;
+                    metro_station = null;
+                }
+                break;
+            case R.id.btn_to_student:
+                if (!to_student) {
+                    btn_to_student.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_purple));
+                    btn_to_student.setTextColor(getResources().getColor(R.color.colorWhite));
+                    to_student = true;
+                }
+                else {
+                    btn_to_student.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
+                    btn_to_student.setTextColor(getResources().getColor(R.color.colorBlueBlack));
+                    to_student = false;
+                }
+                break;
+            case R.id.btn_online:
+                if (!online) {
+                    btn_online.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_purple));
+                    btn_online.setTextColor(getResources().getColor(R.color.colorWhite));
+                    online = true;
+                }
+                else {
+                    btn_online.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
+                    btn_online.setTextColor(getResources().getColor(R.color.colorBlueBlack));
+                    online = false;
+                }
+                break;
+            case R.id.other_text:
+                if (other == null)
+                    putIntentInfoOther();
+                else{
+                    other_text.setBackground(getResources().getDrawable(R.drawable.rounded_corners_oval_white));
+                    other_text.setTextColor(getResources().getColor(R.color.colorBlueBlack));
+                    other_text.setText("Другое");
+                    other = null;
+                }
+                break;
+            case R.id.btn_register_teacher:
+                if (list_subjects.getCount() == 0 || (!to_me && !to_student && !online && other == null) || edit_about_teacher.getText().toString().trim().equals("")){
+                    Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    myRefCurrentUser.child("activity").setValue("teacher");
+
+                    if(to_me) {
+                        myRefCurrentUserTeacherInfoWhere.child("to_me").setValue(to_me);
+                        myRefCurrentUserTeacherInfoWhere.child("metro_station").setValue(metro_station);
+                    }
+                    if(to_student)
+                        myRefCurrentUserTeacherInfoWhere.child("to_student").setValue(to_student);
+                    if(online)
+                        myRefCurrentUserTeacherInfoWhere.child("online").setValue(online);
+                    if(other != null)
+                        myRefCurrentUserTeacherInfoWhere.child("other").setValue(other);
+
+                    if(!edit_about_teacher.getText().toString().equals(""))
+                        myRefCurrentUser.child("about_teacher").setValue(edit_about_teacher.getText().toString().trim());
+
+                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                    startActivity(intent);
+                    finish();
+                }
+                break;
         }
     }
 
     private void putIntentInfoToMe(){
-//        Intent intent = new Intent(getApplicationContext(), ChooseMetro.class);
-//        intent.putExtra("from_reg", 1);
-//        if (to_student)
-//            intent.putExtra("to_student", "yes");
-//        if (!to_student)
-//            intent.putExtra("to_student", "no");
-//        if (online)
-//            intent.putExtra("online", "yes");
-//        if (!online)
-//            intent.putExtra("online", "no");
-//        if (other != null)
-//            intent.putExtra("other", other);
-//        if (!edit_about_teacher.getText().toString().equals(""))
-//            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), ChooseMetro.class);
+        intent.putExtra("from_reg", 1);
+        if (to_student)
+            intent.putExtra("to_student", "yes");
+        if (!to_student)
+            intent.putExtra("to_student", "no");
+        if (online)
+            intent.putExtra("online", "yes");
+        if (!online)
+            intent.putExtra("online", "no");
+        if (other != null)
+            intent.putExtra("other", other);
+        if (!edit_about_teacher.getText().toString().equals(""))
+            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
+        startActivity(intent);
     }
 
     private void putIntentInfoNewSubject(){
