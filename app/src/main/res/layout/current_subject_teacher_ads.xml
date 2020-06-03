@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/teacher_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@color/colorWhite"
+        android:src="@drawable/ic_account_circle_black_24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:foreground="@drawable/user_icon_account_back"/>
+
+    <LinearLayout
+        android:id="@+id/teacher_lin_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/teacher_image"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacher_name"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Имя"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#515C6F"
+            android:layout_marginBottom="1dp"/>
+
+        <TextView
+            android:id="@+id/teacher_pod_subject"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Под предмет"
+            android:textSize="16sp"
+            android:textColor="#515C6F"
+            android:layout_marginBottom="1dp"/>
+
+        <TextView
+            android:id="@+id/teacher_comment"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="Комментарий"
+            android:textSize="16sp"
+            android:textColor="#515C6F"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/teacher_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teacher_lin_lay"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@+id/go_btn"
+        android:text="₽"
+        android:textColor="#FF6969"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/go_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_arrow"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="23dp"/>
+
+    <View
+        android:layout_width="315dp"
+        android:layout_height="0.5dp"
+        android:background="#C9C8CD"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/teacher_price"/>
+</RelativeLayout>
+
