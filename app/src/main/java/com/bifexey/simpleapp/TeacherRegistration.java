@@ -168,47 +168,47 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
     }
 
     private void putIntentInfoNewSubject(){
-//        Intent intent = new Intent(getApplicationContext(), AddSubjectForm.class);
-//        if (to_me) {
-//            intent.putExtra("to_me", "yes");
-//            intent.putExtra("metro_station", metro_station);
-//        }
-//        if (!to_me)
-//            intent.putExtra("to_me", "no");
-//        if (to_student)
-//            intent.putExtra("to_student", "yes");
-//        if (!to_student)
-//            intent.putExtra("to_student", "no");
-//        if (online)
-//            intent.putExtra("online", "yes");
-//        if (!online)
-//            intent.putExtra("online", "no");
-//        if (other != null)
-//            intent.putExtra("other", other);
-//        if (!edit_about_teacher.getText().toString().equals(""))
-//            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), AddSubjectForm.class);
+        if (to_me) {
+            intent.putExtra("to_me", "yes");
+            intent.putExtra("metro_station", metro_station);
+        }
+        if (!to_me)
+            intent.putExtra("to_me", "no");
+        if (to_student)
+            intent.putExtra("to_student", "yes");
+        if (!to_student)
+            intent.putExtra("to_student", "no");
+        if (online)
+            intent.putExtra("online", "yes");
+        if (!online)
+            intent.putExtra("online", "no");
+        if (other != null)
+            intent.putExtra("other", other);
+        if (!edit_about_teacher.getText().toString().equals(""))
+            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
+        startActivity(intent);
     }
 
     private void putIntentInfoOther(){
-//        Intent intent = new Intent(getApplicationContext(), FillOther.class);
-//        if (to_me) {
-//            intent.putExtra("to_me", "yes");
-//            intent.putExtra("metro_station", metro_station);
-//        }
-//        if (!to_me)
-//            intent.putExtra("to_me", "no");
-//        if (to_student)
-//            intent.putExtra("to_student", "yes");
-//        if (!to_student)
-//            intent.putExtra("to_student", "no");
-//        if (online)
-//            intent.putExtra("online", "yes");
-//        if (!online)
-//            intent.putExtra("online", "no");
-//        if (!edit_about_teacher.getText().toString().equals(""))
-//            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
-//        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), FillOther.class);
+        if (to_me) {
+            intent.putExtra("to_me", "yes");
+            intent.putExtra("metro_station", metro_station);
+        }
+        if (!to_me)
+            intent.putExtra("to_me", "no");
+        if (to_student)
+            intent.putExtra("to_student", "yes");
+        if (!to_student)
+            intent.putExtra("to_student", "no");
+        if (online)
+            intent.putExtra("online", "yes");
+        if (!online)
+            intent.putExtra("online", "no");
+        if (!edit_about_teacher.getText().toString().equals(""))
+            intent.putExtra("about_teacher", edit_about_teacher.getText().toString());
+        startActivity(intent);
     }
 
     private void getIntentInfo(){

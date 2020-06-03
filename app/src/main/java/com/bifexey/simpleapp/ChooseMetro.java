@@ -44,9 +44,9 @@ public class ChooseMetro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_metro);
 
-//        search_view_metro = findViewById(R.id.search_view_metro);
-//        list_of_metro = findViewById(R.id.list_of_metro);
-//        btn_back = findViewById(R.id.btn_back);
+        search_view_metro = findViewById(R.id.search_view_metro);
+        list_of_metro = findViewById(R.id.list_of_metro);
+        btn_back = findViewById(R.id.btn_back);
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
