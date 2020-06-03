@@ -1,11 +1,13 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,7 +46,7 @@ public class FlaggedTeachers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flagged_teachers);
 
-        //list_flagged_teachers = findViewById(R.id.list_flagged_teachers);
+        list_flagged_teachers = findViewById(R.id.list_flagged_teachers);
         btn_back = findViewById(R.id.btn_back);
 
         FirebaseListOptions<FlaggedTeacherForm> options = new FirebaseListOptions.Builder<FlaggedTeacherForm>()
@@ -55,16 +57,16 @@ public class FlaggedTeachers extends AppCompatActivity {
         adapter = new FirebaseListAdapter<FlaggedTeacherForm>(options){
             @Override
             protected void populateView(View v, FlaggedTeacherForm model, int position) {
-//                ImageView teacher_image = v.findViewById(R.id.teacher_image);
-//                TextView teacher_name = v.findViewById(R.id.teacher_name);
-//                TextView teacher_phone_number = v.findViewById(R.id.teacher_phone_number);
-//
-//                downloadImage(teacher_image, model.getTeacher_phone_number());
-//                teacher_name.setText(model.teacher_name);
-//
-//                String ph_n = model.teacher_phone_number;
-//                phone_numbers.add(ph_n);
-//                teacher_phone_number.setText(ph_n);
+                ImageView teacher_image = v.findViewById(R.id.teacher_image);
+                TextView teacher_name = v.findViewById(R.id.teacher_name);
+                TextView teacher_phone_number = v.findViewById(R.id.teacher_phone_number);
+
+                downloadImage(teacher_image, model.getTeacher_phone_number());
+                teacher_name.setText(model.teacher_name);
+
+                String ph_n = model.teacher_phone_number;
+                phone_numbers.add(ph_n);
+                teacher_phone_number.setText(ph_n);
             }
         };
 
@@ -75,9 +77,9 @@ public class FlaggedTeachers extends AppCompatActivity {
         list_flagged_teachers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(FlaggedTeachers.this, WatchTeacherProfile.class);
-//                intent.putExtra("teacher_ph", phone_numbers.get(position));
-//                startActivity(intent);
+                Intent intent = new Intent(FlaggedTeachers.this, WatchTeacherProfile.class);
+                intent.putExtra("teacher_ph", phone_numbers.get(position));
+                startActivity(intent);
             }
         });
 
