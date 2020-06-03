@@ -17,9 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bifexey.simpleapp.Filter;
+import com.bifexey.simpleapp.MainPage;
 import com.bifexey.simpleapp.R;
 import com.bifexey.simpleapp.SOSAd;
 import com.bifexey.simpleapp.SOSAdAdapter;
+import com.bifexey.simpleapp.WatchSOS;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -80,8 +82,8 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
                 startActivity(intent);
                 break;
             case R.id.discard_filter:
-//                Intent intent1 = new Intent(getActivity(), MainPage.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), MainPage.class);
+                startActivity(intent1);
                 break;
         }
     }
@@ -110,8 +112,8 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
                         sosAds.add(new SOSAd("", "", "", sos_subjectFromSpinner, sos_locationFromSpinner, sos_subjectName, sos_subjectTopic, sos_year, sos_month, sos_day, sos_hour, sos_minute, "\u20BD" + sos_price, "", sos_phone_number, sos_key));
                 }
 
-//                sosAdAdapter = new SOSAdAdapter(requireActivity(), R.layout.my_sos_ad_item, sosAds);
-//                teacher_search_list_of_subjects.setAdapter(sosAdAdapter);
+                sosAdAdapter = new SOSAdAdapter(requireActivity(), R.layout.my_sos_ad_item, sosAds);
+                teacher_search_list_of_subjects.setAdapter(sosAdAdapter);
 
                 teacher_search_list_of_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -127,9 +129,9 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
                             }
                         }
 
-//                        Intent intent = new Intent(getActivity(), WatchSOS.class);
-//                        intent.putExtra("key", idd);
-//                        startActivity(intent);
+                        Intent intent = new Intent(getActivity(), WatchSOS.class);
+                        intent.putExtra("key", idd);
+                        startActivity(intent);
                     }
                 });
 
