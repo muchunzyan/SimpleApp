@@ -78,19 +78,19 @@ public class CreateSOS extends AppCompatActivity implements View.OnClickListener
 
         key = getIntent().getStringExtra("key");
 
-//        SOS_subject_spinner = findViewById(R.id.SOS_subject_spinner);
-//        SOS_locations_spinner = findViewById(R.id.SOS_locations_spinner);
-//        SOS_btn_choose_date = findViewById(R.id.SOS_btn_choose_date);
-//        SOS_btn_choose_time = findViewById(R.id.SOS_btn_choose_time);
-//        SOS_btn_today = findViewById(R.id.SOS_btn_today);
-//        SOS_btn_publish = findViewById(R.id.SOS_btn_publish);
-//        SOS_edit_subject_name = findViewById(R.id.SOS_edit_subject_name);
-//        SOS_edit_topic = findViewById(R.id.SOS_edit_topic);
-//        SOS_edit_price = findViewById(R.id.SOS_edit_price);
-//        SOS_edit_comment = findViewById(R.id.SOS_edit_comment);
-//        btn_close = findViewById(R.id.btn_close);
-//        SOS_title_text = findViewById(R.id.SOS_title_text);
-//        SOS_btn_publish_text = findViewById(R.id.SOS_btn_publish_text);
+        SOS_subject_spinner = findViewById(R.id.SOS_subject_spinner);
+        SOS_locations_spinner = findViewById(R.id.SOS_locations_spinner);
+        SOS_btn_choose_date = findViewById(R.id.SOS_btn_choose_date);
+        SOS_btn_choose_time = findViewById(R.id.SOS_btn_choose_time);
+        SOS_btn_today = findViewById(R.id.SOS_btn_today);
+        SOS_btn_publish = findViewById(R.id.SOS_btn_publish);
+        SOS_edit_subject_name = findViewById(R.id.SOS_edit_subject_name);
+        SOS_edit_topic = findViewById(R.id.SOS_edit_topic);
+        SOS_edit_price = findViewById(R.id.SOS_edit_price);
+        SOS_edit_comment = findViewById(R.id.SOS_edit_comment);
+        btn_close = findViewById(R.id.btn_close);
+        SOS_title_text = findViewById(R.id.SOS_title_text);
+        SOS_btn_publish_text = findViewById(R.id.SOS_btn_publish_text);
 
         SOS_btn_choose_time.setOnClickListener(this);
         SOS_btn_choose_date.setOnClickListener(this);
@@ -110,9 +110,9 @@ public class CreateSOS extends AppCompatActivity implements View.OnClickListener
                             subjects.add(dss.getValue().toString());
                     }
 
-//                    adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.my_spinner_item, subjects);
-//                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                    SOS_subject_spinner.setAdapter(adapter);
+                    adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.my_spinner_item, subjects);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    SOS_subject_spinner.setAdapter(adapter);
                 }
 
                 if (key != null){
@@ -135,9 +135,9 @@ public class CreateSOS extends AppCompatActivity implements View.OnClickListener
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     locations.add(ds.getValue().toString());
 
-//                    adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.my_spinner_item, locations);
-//                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                    SOS_locations_spinner.setAdapter(adapter);
+                    adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.my_spinner_item, locations);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    SOS_locations_spinner.setAdapter(adapter);
                 }
 
                 if (key != null){
