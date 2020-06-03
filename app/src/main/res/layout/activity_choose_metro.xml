@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseMetro">
+    tools:context=".ChooseMetro"
+    android:background="@color/colorBackGround">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/title_lin_lay"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:src="@drawable/back"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/subject_text"
+            android:text="Метро"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#515C6F"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/search_view_metro"
+        android:queryHint="Ближайшая станция метро"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/search_view_back"
+        android:layout_below="@+id/title_lin_lay"
+        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="5dp"/>
+
+    <ListView
+        android:id="@+id/list_of_metro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_view_metro"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
+
