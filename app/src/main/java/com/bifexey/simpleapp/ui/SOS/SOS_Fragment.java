@@ -22,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bifexey.simpleapp.CreateSOS;
+import com.bifexey.simpleapp.EditSOS;
 import com.bifexey.simpleapp.R;
 import com.bifexey.simpleapp.SOSAd;
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -103,24 +104,24 @@ public class SOS_Fragment extends Fragment implements View.OnClickListener{
         adapter = new FirebaseListAdapter<SOSAd>(options){
             @Override
             protected void populateView(View v, SOSAd model, int position) {
-//                ImageView my_SOS_image = v.findViewById(R.id.my_SOS_image);
-//                TextView my_SOS_subjectFromSpinner = v.findViewById(R.id.my_SOS_subjectFromSpinner);
-//                TextView my_SOS_locationFromSpinner = v.findViewById(R.id.my_SOS_locationFromSpinner);
-//                TextView my_SOS_subjectName = v.findViewById(R.id.my_SOS_subjectName);
-//                TextView my_SOS_subjectTopic = v.findViewById(R.id.my_SOS_subjectTopic);
-//                TextView my_SOS_date_time = v.findViewById(R.id.my_SOS_date_time);
-//                TextView my_SOS_price = v.findViewById(R.id.my_SOS_price);
-//                TextView my_SOS_key = v.findViewById(R.id.my_SOS_key);
-//
-//                downloadImage(my_SOS_image);
-//                my_SOS_subjectFromSpinner.setText(model.getSOS_subjectFromSpinner());
-//                my_SOS_locationFromSpinner.setText(model.getSOS_locationFromSpinner());
-//                my_SOS_subjectName.setText(model.getSOS_subjectName());
-//                my_SOS_subjectTopic.setText(model.getSOS_subjectTopic());
-//                my_SOS_date_time.setText(model.getSOS_day() + "/" + model.getSOS_month() + "/" +
-//                        model.getSOS_year() + " " + model.getSOS_hour() + ":" + model.getSOS_minute());
-//                my_SOS_price.setText("\u20BD" + model.getSOS_price());
-//                my_SOS_key.setText(model.getSOS_key());
+                ImageView my_SOS_image = v.findViewById(R.id.my_SOS_image);
+                TextView my_SOS_subjectFromSpinner = v.findViewById(R.id.my_SOS_subjectFromSpinner);
+                TextView my_SOS_locationFromSpinner = v.findViewById(R.id.my_SOS_locationFromSpinner);
+                TextView my_SOS_subjectName = v.findViewById(R.id.my_SOS_subjectName);
+                TextView my_SOS_subjectTopic = v.findViewById(R.id.my_SOS_subjectTopic);
+                TextView my_SOS_date_time = v.findViewById(R.id.my_SOS_date_time);
+                TextView my_SOS_price = v.findViewById(R.id.my_SOS_price);
+                TextView my_SOS_key = v.findViewById(R.id.my_SOS_key);
+
+                downloadImage(my_SOS_image);
+                my_SOS_subjectFromSpinner.setText(model.getSOS_subjectFromSpinner());
+                my_SOS_locationFromSpinner.setText(model.getSOS_locationFromSpinner());
+                my_SOS_subjectName.setText(model.getSOS_subjectName());
+                my_SOS_subjectTopic.setText(model.getSOS_subjectTopic());
+                my_SOS_date_time.setText(model.getSOS_day() + "/" + model.getSOS_month() + "/" +
+                        model.getSOS_year() + " " + model.getSOS_hour() + ":" + model.getSOS_minute());
+                my_SOS_price.setText("\u20BD" + model.getSOS_price());
+                my_SOS_key.setText(model.getSOS_key());
             }
         };
 
@@ -141,9 +142,9 @@ public class SOS_Fragment extends Fragment implements View.OnClickListener{
                     key = ((TextView) child).getText().toString();
                 }
 
-//                Intent intent = new Intent(getActivity(), EditSOS.class);
-//                intent.putExtra("key", key);
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), EditSOS.class);
+                intent.putExtra("key", key);
+                startActivity(intent);
             }
         });
     }

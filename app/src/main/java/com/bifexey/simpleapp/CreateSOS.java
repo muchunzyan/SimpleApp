@@ -451,29 +451,29 @@ public class CreateSOS extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == android.R.id.home) {
-//            if (key != null) {
-//                Intent intent = new Intent(CreateSOS.this, EditSOS.class);
-//                intent.putExtra("key", key);
-//                startActivity(intent);
-//                finish();
-//            }else{
-//                finish();
-//            }
-//        }
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            if (key != null) {
+                Intent intent = new Intent(CreateSOS.this, EditSOS.class);
+                intent.putExtra("key", key);
+                startActivity(intent);
+                finish();
+            }else{
+                finish();
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-//        if (key != null) {
-//            Intent intent = new Intent(CreateSOS.this, EditSOS.class);
-//            intent.putExtra("key", key);
-//            startActivity(intent);
-//            finish();
-//        }else{
-//            finish();
-//        }
+        if (key != null) {
+            Intent intent = new Intent(CreateSOS.this, EditSOS.class);
+            intent.putExtra("key", key);
+            startActivity(intent);
+            finish();
+        }else{
+            finish();
+        }
     }
 }

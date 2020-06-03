@@ -3,6 +3,7 @@ package com.bifexey.simpleapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -54,18 +55,18 @@ public class EditSOS extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_sos);
 
-//        check_SOS_image = findViewById(R.id.check_SOS_image);
-//        check_SOS_name = findViewById(R.id.check_SOS_name);
-//        check_SOS_subjectFromSpinner = findViewById(R.id.check_SOS_subjectFromSpinner);
-//        check_SOS_locationFromSpinner = findViewById(R.id.check_SOS_locationFromSpinner);
-//        check_SOS_subjectName = findViewById(R.id.check_SOS_subjectName);
-//        check_SOS_subjectTopic = findViewById(R.id.check_SOS_subjectTopic);
-//        check_SOS_date_time = findViewById(R.id.check_SOS_date_time);
-//        check_SOS_comment = findViewById(R.id.check_SOS_comment);
-//        check_SOS_price = findViewById(R.id.check_SOS_price);
-//        check_SOS_btn_delete = findViewById(R.id.check_SOS_btn_delete);
-//        check_SOS_btn_edit = findViewById(R.id.check_SOS_btn_edit);
-//        btn_back = findViewById(R.id.btn_back);
+        check_SOS_image = findViewById(R.id.check_SOS_image);
+        check_SOS_name = findViewById(R.id.check_SOS_name);
+        check_SOS_subjectFromSpinner = findViewById(R.id.check_SOS_subjectFromSpinner);
+        check_SOS_locationFromSpinner = findViewById(R.id.check_SOS_locationFromSpinner);
+        check_SOS_subjectName = findViewById(R.id.check_SOS_subjectName);
+        check_SOS_subjectTopic = findViewById(R.id.check_SOS_subjectTopic);
+        check_SOS_date_time = findViewById(R.id.check_SOS_date_time);
+        check_SOS_comment = findViewById(R.id.check_SOS_comment);
+        check_SOS_price = findViewById(R.id.check_SOS_price);
+        check_SOS_btn_delete = findViewById(R.id.check_SOS_btn_delete);
+        check_SOS_btn_edit = findViewById(R.id.check_SOS_btn_edit);
+        btn_back = findViewById(R.id.btn_back);
 
         check_SOS_btn_delete.setOnClickListener(this);
         check_SOS_btn_edit.setOnClickListener(this);
@@ -139,21 +140,21 @@ public class EditSOS extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.check_SOS_btn_delete:
-//                createDialogWindow();
-//                dialogWindow.show();
-//                break;
-//            case R.id.check_SOS_btn_edit:
-//                Intent intent = new Intent(EditSOS.this, CreateSOS.class);
-//                intent.putExtra("key", key);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.check_SOS_btn_delete:
+                createDialogWindow();
+                dialogWindow.show();
+                break;
+            case R.id.check_SOS_btn_edit:
+                Intent intent = new Intent(EditSOS.this, CreateSOS.class);
+                intent.putExtra("key", key);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 
     private static String removeCharAt(String s, int pos) {

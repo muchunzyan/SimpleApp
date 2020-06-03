@@ -4,6 +4,7 @@ package com.bifexey.simpleapp.ui.account;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,7 +17,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.FlaggedTeachers;
 import com.bifexey.simpleapp.R;
+import com.bifexey.simpleapp.TeacherRegistration;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -134,21 +137,21 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                     myRefCurrentUser.child("activity").setValue("teacher");
                 }
                 else {
-//                    Intent intent = new Intent(getContext(), TeacherRegistration.class);
-//                    startActivity(intent);
-//                    if(getActivity() != null) {
-//                        getActivity().finish();
-//                    }
+                    Intent intent = new Intent(getContext(), TeacherRegistration.class);
+                    startActivity(intent);
+                    if(getActivity() != null) {
+                        getActivity().finish();
+                    }
                 }
                 break;
             case R.id.btn_account_help:
                 createDialogWindow();
                 dialogWindow.show();
                 break;
-//            case R.id.chosen_teachers_btn:
-//                Intent intent4 = new Intent(getActivity(), FlaggedTeachers.class);
-//                startActivity(intent4);
-//                break;
+            case R.id.chosen_teachers_btn:
+                Intent intent4 = new Intent(getActivity(), FlaggedTeachers.class);
+                startActivity(intent4);
+                break;
             case R.id.FAQ_btn:
 //                Intent intent1 = new Intent(getActivity(), FAQList.class);
 //                startActivity(intent1);
