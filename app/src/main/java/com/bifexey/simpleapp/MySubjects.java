@@ -52,10 +52,10 @@ public class MySubjects extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_sub);
 
-//        list_my_subjects_account = findViewById(R.id.list_my_subjects_account);
-//        text_title = findViewById(R.id.text_title);
-//        btn_back = findViewById(R.id.btn_back);
-//        btn_add = findViewById(R.id.btn_add);
+        list_my_subjects_account = findViewById(R.id.list_my_subjects_account);
+        text_title = findViewById(R.id.text_title);
+        btn_back = findViewById(R.id.btn_back);
+        btn_add = findViewById(R.id.btn_add);
 
         btn_back.setOnClickListener(this);
         btn_add.setOnClickListener(this);
@@ -75,15 +75,15 @@ public class MySubjects extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//            case R.id.btn_add:
-//                Intent intent = new Intent(MySubjects.this, AddSubjectForm.class);
-//                startActivity(intent);
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.btn_back:
+                finish();
+                break;
+            case R.id.btn_add:
+                Intent intent = new Intent(MySubjects.this, AddSubjectForm.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     private void displayTeacherSubjects(){
