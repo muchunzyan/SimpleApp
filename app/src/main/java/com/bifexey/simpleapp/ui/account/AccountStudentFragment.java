@@ -110,7 +110,7 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                                 second_name = ds.getValue().toString();
                                 break;
                             case "location":
-                                //text_location.setText(ds.getValue().toString());
+                                text_location.setText(ds.getValue().toString());
                                 break;
                             case "activity":
                                 activity = ds.getValue().toString();

@@ -7,11 +7,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -59,11 +61,11 @@ public class Chat extends AppCompatActivity implements View.OnClickListener {
         users_phone_numbers.add(user.getPhoneNumber());
         Collections.sort(users_phone_numbers);
 
-//        edit_text = findViewById(R.id.edit_text);
-//        btn_send = findViewById(R.id.btn_send);
-//        go_back_lay = findViewById(R.id.go_back_lay);
-//        name_text = findViewById(R.id.name_text);
-//        btn_scroll_down = findViewById(R.id.btn_scroll_down);
+        edit_text = findViewById(R.id.edit_text);
+        btn_send = findViewById(R.id.btn_send);
+        go_back_lay = findViewById(R.id.go_back_lay);
+        name_text = findViewById(R.id.name_text);
+        btn_scroll_down = findViewById(R.id.btn_scroll_down);
 
         btn_send.setOnClickListener(this);
         go_back_lay.setOnClickListener(this);
@@ -109,40 +111,40 @@ public class Chat extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-//            case R.id.btn_send:
-//                String messageText = edit_text.getText().toString();
-//
-//                if (messageText.length() == 0) {
-//                    Toast.makeText(getApplicationContext(), "Write something", Toast.LENGTH_SHORT).show();
-//                }
-//                else if (messageText.length() > 300) {
-//                    Toast.makeText(getApplicationContext(), "This message is too big", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    myRefCurrentChat.push().setValue(new ChatMessage(first_name, messageText, user.getPhoneNumber()));
-//                }
-//
-//                edit_text.setText("");
-//                break;
-//            case R.id.go_back_lay:
-//                finish();
-//                break;
-//            case R.id.btn_scroll_down:
-//                listOfMessages.smoothScrollToPosition(adapter.getCount());
-//                break;
+            case R.id.btn_send:
+                String messageText = edit_text.getText().toString();
+
+                if (messageText.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Write something", Toast.LENGTH_SHORT).show();
+                }
+                else if (messageText.length() > 300) {
+                    Toast.makeText(getApplicationContext(), "This message is too big", Toast.LENGTH_SHORT).show();
+                } else {
+                    myRefCurrentChat.push().setValue(new ChatMessage(first_name, messageText, user.getPhoneNumber()));
+                }
+
+                edit_text.setText("");
+                break;
+            case R.id.go_back_lay:
+                finish();
+                break;
+            case R.id.btn_scroll_down:
+                listOfMessages.smoothScrollToPosition(adapter.getCount());
+                break;
         }
     }
 
     private void displayChatMessages(){
-//        listOfMessages = findViewById(R.id.list_of_messages);
-//
-//        FirebaseListOptions<ChatMessage> options = new FirebaseListOptions.Builder<ChatMessage>()
-//                .setQuery(myRefCurrentChat, ChatMessage.class)
-//                .setLayout(R.layout.message_item)
-//                .build();
-//
-//        adapter = new FirebaseListAdapter<ChatMessage>(options){
-//            @Override
-//            protected void populateView(View v, ChatMessage model, int position) {
+        listOfMessages = findViewById(R.id.list_of_messages);
+
+        FirebaseListOptions<ChatMessage> options = new FirebaseListOptions.Builder<ChatMessage>()
+                .setQuery(myRefCurrentChat, ChatMessage.class)
+                .setLayout(R.layout.message_item)
+                .build();
+
+        adapter = new FirebaseListAdapter<ChatMessage>(options){
+            @Override
+            protected void populateView(View v, ChatMessage model, int position) {
 //                TextView messageText = v.findViewById(R.id.message_text);
 //                TextView messagePhoneNumber = v.findViewById(R.id.message_phone_number);
 //                TextView messageTime = v.findViewById(R.id.message_time);
@@ -154,22 +156,22 @@ public class Chat extends AppCompatActivity implements View.OnClickListener {
 //
 //                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
 //                messageText.setText(model.getMessageText());
-//            }
-//        };
-//
-//        listOfMessages.setAdapter(adapter);
-//
-//        myRefCurrentChat.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                listOfMessages.smoothScrollToPosition(adapter.getCount());
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+            }
+        };
+
+        listOfMessages.setAdapter(adapter);
+
+        myRefCurrentChat.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listOfMessages.smoothScrollToPosition(adapter.getCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override

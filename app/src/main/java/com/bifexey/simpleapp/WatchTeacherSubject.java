@@ -1,11 +1,13 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,17 +61,17 @@ public class WatchTeacherSubject extends AppCompatActivity implements View.OnCli
         myRefNeedTAdd = myRefAllTAds.child(teacher_ad_sub).child(teacher_ad_key);
         myRefUserTeacher = myRefUsers.child(teacher_phone_number);
 
-//        W_t_sub_image = findViewById(R.id.W_t_sub_image);
-//        W_t_sub_img_flag = findViewById(R.id.W_t_sub_img_flag);
-//        W_t_sub_name = findViewById(R.id.W_t_sub_name);
-//        W_t_sub_subject = findViewById(R.id.W_t_sub_subject);
-//        W_t_sub_pod_subject = findViewById(R.id.W_t_sub_pod_subject);
-//        W_t_sub_comment = findViewById(R.id.W_t_sub_comment);
-//        W_t_sub_comment_teacher = findViewById(R.id.W_t_sub_comment_teacher);
-//        W_t_sub_price = findViewById(R.id.W_t_sub_price);
-//        W_t_sub_btn_chat = findViewById(R.id.W_t_sub_btn_chat);
-//        text_where = findViewById(R.id.text_where);
-//        btn_back = findViewById(R.id.btn_back);
+        W_t_sub_image = findViewById(R.id.W_t_sub_image);
+        W_t_sub_img_flag = findViewById(R.id.W_t_sub_img_flag);
+        W_t_sub_name = findViewById(R.id.W_t_sub_name);
+        W_t_sub_subject = findViewById(R.id.W_t_sub_subject);
+        W_t_sub_pod_subject = findViewById(R.id.W_t_sub_pod_subject);
+        W_t_sub_comment = findViewById(R.id.W_t_sub_comment);
+        W_t_sub_comment_teacher = findViewById(R.id.W_t_sub_comment_teacher);
+        W_t_sub_price = findViewById(R.id.W_t_sub_price);
+        W_t_sub_btn_chat = findViewById(R.id.W_t_sub_btn_chat);
+        text_where = findViewById(R.id.text_where);
+        btn_back = findViewById(R.id.btn_back);
 
         W_t_sub_img_flag.setOnClickListener(this);
         W_t_sub_btn_chat.setOnClickListener(this);
@@ -146,29 +148,29 @@ public class WatchTeacherSubject extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.W_t_sub_img_flag:
-//                if(!in_favorite){
-//                    myRefFlaggedTeachers.child(o_user_phone_number).setValue(new FlaggedTeacherForm(o_user_phone_number, teacher_name));
-//                    Toast.makeText(WatchTeacherSubject.this, "Учитель добавлен в избранное", Toast.LENGTH_SHORT).show();
-//                    checkFlaggedTeachers();
-//                } else {
-//                    myRefFlaggedTeachers.child(o_user_phone_number).removeValue();
-//                    Toast.makeText(WatchTeacherSubject.this, "Учитель удалён из избранного", Toast.LENGTH_SHORT).show();
-//                    W_t_sub_img_flag.setImageDrawable(getResources().getDrawable(R.drawable.star2));
-//                    in_favorite = false;
-//                    checkFlaggedTeachers();
-//                }
-//                break;
-//            case R.id.W_t_sub_btn_chat:
-//                Intent intent = new Intent(WatchTeacherSubject.this, Chat.class);
-//                intent.putExtra("o_user_phone_number", o_user_phone_number);
-//                startActivity(intent);
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.W_t_sub_img_flag:
+                if(!in_favorite){
+                    myRefFlaggedTeachers.child(o_user_phone_number).setValue(new FlaggedTeacherForm(o_user_phone_number, teacher_name));
+                    Toast.makeText(WatchTeacherSubject.this, "Учитель добавлен в избранное", Toast.LENGTH_SHORT).show();
+                    checkFlaggedTeachers();
+                } else {
+                    myRefFlaggedTeachers.child(o_user_phone_number).removeValue();
+                    Toast.makeText(WatchTeacherSubject.this, "Учитель удалён из избранного", Toast.LENGTH_SHORT).show();
+                    W_t_sub_img_flag.setImageDrawable(getResources().getDrawable(R.drawable.star2));
+                    in_favorite = false;
+                    checkFlaggedTeachers();
+                }
+                break;
+            case R.id.W_t_sub_btn_chat:
+                Intent intent = new Intent(WatchTeacherSubject.this, Chat.class);
+                intent.putExtra("o_user_phone_number", o_user_phone_number);
+                startActivity(intent);
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 
     private static String removeCharAt(String s, int pos) {
