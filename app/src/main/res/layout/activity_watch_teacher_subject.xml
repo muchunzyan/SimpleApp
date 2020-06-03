@@ -1,9 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WatchTeacherSubject">
+    tools:context=".WatchTeacherSubject"
+    android:background="@color/colorWhite">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:src="@drawable/back2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:id="@+id/W_t_sub_img_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/star2"/>
+
+        <LinearLayout
+            android:id="@+id/W_t_sub_lin_lay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/W_t_sub_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/colorWhite"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                android:foreground="@drawable/user_icon_account_back"/>
+
+            <TextView
+                android:id="@+id/W_t_sub_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ФИО"
+                android:textSize="25sp"
+                android:textColor="#515C6F"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/W_t_sub_btn_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingHorizontal="17dp"
+                android:text="Написать"
+                android:textStyle="bold"
+                android:textColor="#FF6969"
+                android:background="@drawable/write_btn_back"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subject_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/W_t_sub_lin_lay1">
+
+            <TextView
+                android:id="@+id/subject_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Предмет"
+                android:textColor="#50515C6F"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/W_t_sub_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Предмет"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pod_subject_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/subject_lay">
+
+            <TextView
+                android:id="@+id/pod_subject_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Раздел"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_t_sub_pod_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Раздел"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/price_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/pod_subject_lay">
+
+            <TextView
+                android:id="@+id/price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/W_t_sub_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:text="Цена"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subject_comment_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/price_lay">
+
+            <TextView
+                android:id="@+id/W_t_sub_comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий о предмете"
+                android:textSize="13sp"
+                android:textColor="#50515C6F" />
+
+            <TextView
+                android:id="@+id/W_t_sub_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Комментарий о предмете"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teacher_comment_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/subject_comment_lay">
+
+            <TextView
+                android:id="@+id/W_t_sub_comment_teacher_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий б учителе"
+                android:textSize="13sp"
+                android:textColor="#50515C6F" />
+
+            <TextView
+                android:id="@+id/W_t_sub_comment_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Комментарий об учителе"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/location_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/teacher_comment_lay">
+
+            <TextView
+                android:id="@+id/W_t_sub_where_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Место"
+                android:textSize="13sp"
+                android:textColor="#50515C6F"/>
+
+            <TextView
+                android:id="@+id/text_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#515C6F"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+
