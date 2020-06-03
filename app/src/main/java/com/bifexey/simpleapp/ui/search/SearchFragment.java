@@ -44,8 +44,8 @@ public class SearchFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_search, null);
 
-        //listOfSubjects = v.findViewById(R.id.list_of_subjects);
-        //search_view_sub = v.findViewById(R.id.search_view_sub);
+        listOfSubjects = v.findViewById(R.id.list_of_subjects);
+        search_view_sub = v.findViewById(R.id.search_view_sub);
 
         myRefSubjects.addValueEventListener(new ValueEventListener() {
             @Override

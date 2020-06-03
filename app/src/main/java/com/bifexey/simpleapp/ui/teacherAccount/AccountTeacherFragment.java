@@ -16,6 +16,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.bifexey.simpleapp.AboutApp;
+import com.bifexey.simpleapp.AccountSettings;
+import com.bifexey.simpleapp.AddSubjectForm;
+import com.bifexey.simpleapp.FAQList;
+import com.bifexey.simpleapp.MySubjects;
 import com.bifexey.simpleapp.R;
 import com.bifexey.simpleapp.TeacherRegistration;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -148,24 +153,24 @@ public class AccountTeacherFragment extends Fragment implements View.OnClickList
                 dialogWindow.show();
                 break;
             case R.id.my_subjects_btn:
-                //Intent intent1 = new Intent(getActivity(), MySubjects.class);
-                //startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), MySubjects.class);
+                startActivity(intent1);
                 break;
             case R.id.FAQ_btn:
-                //Intent intent2 = new Intent(getActivity(), FAQList.class);
-                //startActivity(intent2);
+                Intent intent2 = new Intent(getActivity(), FAQList.class);
+                startActivity(intent2);
                 break;
             case R.id.about_app_btn:
-                //Intent intent3 = new Intent(getActivity(), AboutApp.class);
-                //startActivity(intent3);
+                Intent intent3 = new Intent(getActivity(), AboutApp.class);
+                startActivity(intent3);
                 break;
             case R.id.settings_btn:
-                //Intent intent4 = new Intent(getActivity(), AccountSettings.class);
-                //startActivity(intent4);
+                Intent intent4 = new Intent(getActivity(), AccountSettings.class);
+                startActivity(intent4);
                 break;
             case R.id.btn_add_teacher_subject:
-                //Intent intent5 = new Intent(getActivity(), AddSubjectForm.class);
-                //startActivity(intent5);
+                Intent intent5 = new Intent(getActivity(), AddSubjectForm.class);
+                startActivity(intent5);
                 break;
         }
     }

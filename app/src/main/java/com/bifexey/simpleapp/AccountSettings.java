@@ -20,8 +20,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -74,14 +76,14 @@ public class AccountSettings extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
 
-//        edit_first_name = findViewById(R.id.edit_first_name);
-//        edit_second_name = findViewById(R.id.edit_second_name);
-//        btn_accept_changes = findViewById(R.id.btn_accept_changes);
-//        location_spinner = findViewById(R.id.location_spinner);
-//        change_photo_im = findViewById(R.id.change_photo_im);
-//        btn_back = findViewById(R.id.btn_back);
-//        btn_signOut = findViewById(R.id.btn_signOut);
-//        lay_image = findViewById(R.id.lay_image);
+        edit_first_name = findViewById(R.id.edit_first_name);
+        edit_second_name = findViewById(R.id.edit_second_name);
+        btn_accept_changes = findViewById(R.id.btn_accept_changes);
+        location_spinner = findViewById(R.id.location_spinner);
+        change_photo_im = findViewById(R.id.change_photo_im);
+        btn_back = findViewById(R.id.btn_back);
+        btn_signOut = findViewById(R.id.btn_signOut);
+        lay_image = findViewById(R.id.lay_image);
 
         lay_image.setOnClickListener(this);
         btn_accept_changes.setOnClickListener(this);
@@ -147,42 +149,42 @@ public class AccountSettings extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.lay_image:
-//                FileChooser();
-//                break;
-//            case R.id.btn_accept_changes:
-//                String first_name_text = edit_first_name.getText().toString().trim();
-//                String second_name_text = edit_second_name.getText().toString().trim();
-//
-//                myRefCurrentUser.child("first_name").setValue(first_name_text);
-//                myRefCurrentUser.child("second_name").setValue(second_name_text);
-//
-//                myRefCurrentUser.child("location").setValue(t_l);
-//
-//                if (image_changed)
-//                    FileUploader();
-//                else {
-//                    finish();
-//                }
-//                break;
-//            case R.id.btn_signOut:
-//                AuthUI.getInstance()
-//                        .signOut(AccountSettings.this)
-//                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<Void> task) {
-//                                btn_signOut.setEnabled(false);
-//                                showSignInOptions();
-//                            }
-//                        }).addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(AccountSettings.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.lay_image:
+                FileChooser();
+                break;
+            case R.id.btn_accept_changes:
+                String first_name_text = edit_first_name.getText().toString().trim();
+                String second_name_text = edit_second_name.getText().toString().trim();
+
+                myRefCurrentUser.child("first_name").setValue(first_name_text);
+                myRefCurrentUser.child("second_name").setValue(second_name_text);
+
+                myRefCurrentUser.child("location").setValue(t_l);
+
+                if (image_changed)
+                    FileUploader();
+                else {
+                    finish();
+                }
+                break;
+            case R.id.btn_signOut:
+                AuthUI.getInstance()
+                        .signOut(AccountSettings.this)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                btn_signOut.setEnabled(false);
+                                showSignInOptions();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AccountSettings.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+        }
     }
 
     private void downloadImage() {

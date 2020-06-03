@@ -51,7 +51,7 @@ public class ChatFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chat, null);
 
-        //chats_list_view = v.findViewById(R.id.chats_list_view);
+        chats_list_view = v.findViewById(R.id.chats_list_view);
 
         myRefChats.addValueEventListener(new ValueEventListener() {
             @Override
