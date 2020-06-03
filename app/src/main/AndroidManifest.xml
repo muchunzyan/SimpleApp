@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AppTermsOfUse"></activity>
+        <activity android:name=".AccountSettings"></activity>
+        <activity android:name=".AppTermsOfUse" />
         <activity android:name=".AppContacts" />
         <activity android:name=".AppPrivacyPolicy" />
         <activity android:name=".AboutApp" />

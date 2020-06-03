@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bifexey.simpleapp.AboutApp;
+import com.bifexey.simpleapp.AccountSettings;
 import com.bifexey.simpleapp.FAQList;
 import com.bifexey.simpleapp.FlaggedTeachers;
 import com.bifexey.simpleapp.R;
@@ -163,8 +164,8 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
                 startActivity(intent2);
                 break;
             case R.id.settings_btn:
-//                Intent intent3 = new Intent(getActivity(), AccountSettings.class);
-//                startActivity(intent3);
+                Intent intent3 = new Intent(getActivity(), AccountSettings.class);
+                startActivity(intent3);
                 break;
         }
     }
