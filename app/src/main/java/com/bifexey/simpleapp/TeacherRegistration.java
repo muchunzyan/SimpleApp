@@ -1,18 +1,14 @@
 package com.bifexey.simpleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextClock;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -51,21 +47,21 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
 //        subjects_spinner_r = findViewById(R.id.subjects_spinner_r);
 //        edit_text_hour_cost_r = findViewById(R.id.edit_text_hour_cost_r);
 //        edit_text_comment_r = findViewById(R.id.edit_text_comment_r);
-//        edit_about_teacher = findViewById(R.id.edit_about_teacher);
-//        btn_to_student = findViewById(R.id.btn_to_student);
-//        btn_online = findViewById(R.id.btn_online);
-//        btn_register_teacher = findViewById(R.id.btn_register_teacher);
-//        btn_add_subject = findViewById(R.id.btn_add_subject);
-//        list_subjects = findViewById(R.id.list_subjects);
-//        to_me_text = findViewById(R.id.to_me_text);
-//        other_text = findViewById(R.id.other_text);
+        edit_about_teacher = findViewById(R.id.edit_about_teacher);
+        btn_to_student = findViewById(R.id.btn_to_student);
+        btn_online = findViewById(R.id.btn_online);
+        btn_register_teacher = findViewById(R.id.btn_register_teacher);
+        btn_add_subject = findViewById(R.id.btn_add_subject);
+        list_subjects = findViewById(R.id.list_subjects);
+        to_me_text = findViewById(R.id.to_me_text);
+        other_text = findViewById(R.id.other_text);
 
-//        btn_add_subject.setOnClickListener(this);
-////        to_me_text.setOnClickListener(this);
-////        btn_to_student.setOnClickListener(this);
-////        btn_online.setOnClickListener(this);
-////        other_text.setOnClickListener(this);
-////        btn_register_teacher.setOnClickListener(this);
+        btn_add_subject.setOnClickListener(this);
+        to_me_text.setOnClickListener(this);
+        btn_to_student.setOnClickListener(this);
+        btn_online.setOnClickListener(this);
+        other_text.setOnClickListener(this);
+        btn_register_teacher.setOnClickListener(this);
 
         displayTeacherSubjects();
         getIntentInfo();
@@ -251,15 +247,15 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
         adapter = new FirebaseListAdapter<SubjectFormItem>(options){
             @Override
             protected void populateView(View v, SubjectFormItem model, int position) {
-//                TextView subject_subject = v.findViewById(R.id.subject_subject);
-//                TextView subject_special_subjects = v.findViewById(R.id.subject_special_subjects);
-//                TextView subject_hour_cost = v.findViewById(R.id.subject_hour_cost);
-//                TextView subject_comment = v.findViewById(R.id.subject_comment);
-//
-//                subject_subject.setText(model.getSubject());
-//                subject_special_subjects.setText(model.getSpecial_subject());
-//                subject_hour_cost.setText(model.getPrice() + "₽");
-//                subject_comment.setText(model.getComment());
+                TextView subject_subject = v.findViewById(R.id.subject_subject);
+                TextView subject_special_subjects = v.findViewById(R.id.subject_special_subjects);
+                TextView subject_hour_cost = v.findViewById(R.id.subject_hour_cost);
+                TextView subject_comment = v.findViewById(R.id.subject_comment);
+
+                subject_subject.setText(model.getSubject());
+                subject_special_subjects.setText(model.getSpecial_subject());
+                subject_hour_cost.setText(model.getPrice() + "₽");
+                subject_comment.setText(model.getComment());
             }
         };
         list_subjects.setAdapter(adapter);

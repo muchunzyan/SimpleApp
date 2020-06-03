@@ -1,71 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorWhite">
-
-    <ImageView
-        android:id="@+id/form_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/colorWhite"
-        android:src="@drawable/ic_account_circle_black_24dp"
-        android:foreground="@drawable/user_icon_account_back"/>
+    android:layout_height="match_parent"
+    tools:context=".TeacherRegistration"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorBackGround">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/title_lin_lay"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toEndOf="@+id/form_image"
-        android:layout_centerVertical="true"
-        android:layout_marginVertical="10dp">
+        android:gravity="center_vertical">
 
         <TextView
-            android:text="subject"
-            android:textSize="16sp"
+            android:id="@+id/subject_text"
+            android:text="Регистрация учителя"
             android:textStyle="bold"
+            android:textSize="25sp"
             android:textColor="#515C6F"
-            android:id="@+id/subject_subject"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="special_subject"
-            android:textSize="16sp"
-            android:textColor="#515C6F"
-            android:id="@+id/subject_special_subjects"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="comment"
-            android:textSize="16sp"
-            android:textColor="#515C6F"
-            android:id="@+id/subject_comment"
-            android:layout_width="200dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <TextView
-        android:text="price"
-        android:textSize="16sp"
-        android:textColor="#FF6969"
-        android:id="@+id/subject_hour_cost"
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C9C8CD"
+        android:layout_below="@id/title_lin_lay"/>
+
+    <ListView
+        android:id="@+id/list_subjects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="40dp"/>
+        android:layout_above="@+id/all_btns_lay"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/divider"/>
 
-    ////
-    <TextView
-        android:id="@+id/subject_key"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
-    ////
+    <LinearLayout
+        android:id="@+id/all_btns_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBackGround"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/lay_were"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/to_me_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners_oval_white"
+                    android:text="У себя"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="#515C6F"
+                    android:textSize="14sp"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:id="@+id/btn_to_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="У ученика"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_corners_oval_white"
+                    android:textColor="#515C6F"
+                    android:textSize="14sp"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:id="@+id/other_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corners_oval_white"
+                    android:text="Другое"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textColor="#515C6F"
+                    android:textSize="14sp"
+                    android:layout_margin="5dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Онлайн"
+                android:padding="10dp"
+                android:background="@drawable/rounded_corners_oval_white"
+                android:textColor="#515C6F"
+                android:textSize="14sp"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_add_subject"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:background="@drawable/chat_item_back"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Создать новое"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#727C8E"
+                android:layout_marginStart="15dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/pink_plus"
+                android:layout_marginEnd="15dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_about_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Расскажите о себе"
+            android:inputType="text"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/btn_register_teacher"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:background="@drawable/sign_out_btn_back"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Подтвердить"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:layout_marginStart="80dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/white_btn_go2"
+                android:layout_marginEnd="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
