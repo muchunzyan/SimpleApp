@@ -3,6 +3,7 @@ package com.bifexey.simpleapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -58,15 +59,15 @@ public class WatchTeacherProfile extends AppCompatActivity implements View.OnCli
         myRefCurrentTeacher = myRefUsers.child(o_user_phone_number);
         myRefDeleteFlaggedTeacher = myRefUsers.child(user.getPhoneNumber()).child("flagged_teachers").child(o_user_phone_number);
 
-//        W_T_image = findViewById(R.id.W_T_image);
-//        W_T_name = findViewById(R.id.W_T_name);
-//        W_T_location = findViewById(R.id.W_T_location);
-//        W_T_about_teacher = findViewById(R.id.W_T_about_teacher);
-//        W_T_teacher_subjects = findViewById(R.id.W_T_teacher_subjects);
-//        W_T_delete_teacher = findViewById(R.id.W_T_delete_teacher);
-//        W_T_chat_teacher = findViewById(R.id.W_T_chat_teacher);
-//        btn_back = findViewById(R.id.btn_back);
-//        W_T_where = findViewById(R.id.W_T_where);
+        W_T_image = findViewById(R.id.W_T_image);
+        W_T_name = findViewById(R.id.W_T_name);
+        W_T_location = findViewById(R.id.W_T_location);
+        W_T_about_teacher = findViewById(R.id.W_T_about_teacher);
+        W_T_teacher_subjects = findViewById(R.id.W_T_teacher_subjects);
+        W_T_delete_teacher = findViewById(R.id.W_T_delete_teacher);
+        W_T_chat_teacher = findViewById(R.id.W_T_chat_teacher);
+        btn_back = findViewById(R.id.btn_back);
+        W_T_where = findViewById(R.id.W_T_where);
 
         W_T_teacher_subjects.setOnClickListener(this);
         W_T_delete_teacher.setOnClickListener(this);
@@ -118,25 +119,25 @@ public class WatchTeacherProfile extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.W_T_teacher_subjects:
-//                Intent intent = new Intent(WatchTeacherProfile.this, MySubjects.class);
-//                intent.putExtra("from_teacher_profile", o_user_phone_number);
-//                startActivity(intent);
-//                break;
-//            case R.id.W_T_delete_teacher:
-//                createDialogWindow();
-//                dialogWindow.show();
-//                break;
-//            case R.id.W_T_chat_teacher:
-//                Intent intent1 = new Intent(WatchTeacherProfile.this, Chat.class);
-//                intent1.putExtra("o_user_phone_number", o_user_phone_number);
-//                startActivity(intent1);
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.W_T_teacher_subjects:
+                Intent intent = new Intent(WatchTeacherProfile.this, MySubjects.class);
+                intent.putExtra("from_teacher_profile", o_user_phone_number);
+                startActivity(intent);
+                break;
+            case R.id.W_T_delete_teacher:
+                createDialogWindow();
+                dialogWindow.show();
+                break;
+            case R.id.W_T_chat_teacher:
+                Intent intent1 = new Intent(WatchTeacherProfile.this, Chat.class);
+                intent1.putExtra("o_user_phone_number", o_user_phone_number);
+                startActivity(intent1);
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 
     private static String removeCharAt(String s, int pos) {

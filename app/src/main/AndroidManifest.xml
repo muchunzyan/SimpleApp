@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WatchTeacherProfile"></activity>
+        <activity android:name=".MySubjects"></activity>
+        <activity android:name=".WatchTeacherProfile" />
         <activity android:name=".FlaggedTeachers" />
         <activity android:name=".EditSOS" />
         <activity android:name=".CreateSOS" />
