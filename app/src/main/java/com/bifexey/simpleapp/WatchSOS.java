@@ -1,5 +1,6 @@
 package com.bifexey.simpleapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -46,17 +47,17 @@ public class WatchSOS extends AppCompatActivity implements View.OnClickListener 
 
         key = getIntent().getStringExtra("key");
 
-//        W_SOS_image = findViewById(R.id.W_SOS_image);
-//        W_SOS_name = findViewById(R.id.W_SOS_name);
-//        W_SOS_location = findViewById(R.id.W_SOS_location);
-//        W_SOS_subject = findViewById(R.id.W_SOS_subject);
-//        W_SOS_subjectName = findViewById(R.id.W_SOS_subjectName);
-//        W_SOS_subjectTopic = findViewById(R.id.W_SOS_subjectTopic);
-//        W_SOS_date_time = findViewById(R.id.W_SOS_date_time);
-//        W_SOS_comment = findViewById(R.id.W_SOS_comment);
-//        W_SOS_price = findViewById(R.id.W_SOS_price);
-//        W_SOS_btn_chat = findViewById(R.id.W_SOS_btn_chat);
-//        btn_back = findViewById(R.id.btn_back);
+        W_SOS_image = findViewById(R.id.W_SOS_image);
+        W_SOS_name = findViewById(R.id.W_SOS_name);
+        W_SOS_location = findViewById(R.id.W_SOS_location);
+        W_SOS_subject = findViewById(R.id.W_SOS_subject);
+        W_SOS_subjectName = findViewById(R.id.W_SOS_subjectName);
+        W_SOS_subjectTopic = findViewById(R.id.W_SOS_subjectTopic);
+        W_SOS_date_time = findViewById(R.id.W_SOS_date_time);
+        W_SOS_comment = findViewById(R.id.W_SOS_comment);
+        W_SOS_price = findViewById(R.id.W_SOS_price);
+        W_SOS_btn_chat = findViewById(R.id.W_SOS_btn_chat);
+        btn_back = findViewById(R.id.btn_back);
 
         W_SOS_btn_chat.setOnClickListener(this);
         btn_back.setOnClickListener(this);
@@ -66,16 +67,16 @@ public class WatchSOS extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.W_SOS_btn_chat:
-//                Intent intent = new Intent(WatchSOS.this, Chat.class);
-//                intent.putExtra("o_user_phone_number", o_user_phone_number);
-//                startActivity(intent);
-//                break;
-//            case R.id.btn_back:
-//                finish();
-//                break;
-//        }
+        switch (v.getId()){
+            case R.id.W_SOS_btn_chat:
+                Intent intent = new Intent(WatchSOS.this, Chat.class);
+                intent.putExtra("o_user_phone_number", o_user_phone_number);
+                startActivity(intent);
+                break;
+            case R.id.btn_back:
+                finish();
+                break;
+        }
     }
 
     private void setInfo(){

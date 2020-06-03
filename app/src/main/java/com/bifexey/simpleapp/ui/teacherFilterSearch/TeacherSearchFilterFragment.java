@@ -230,8 +230,8 @@ public class TeacherSearchFilterFragment extends Fragment implements View.OnClic
                             }
                         }
 
-//                        filteredSosAdAdapter = new SOSAdAdapter(requireActivity(), R.layout.my_sos_ad_item, filtered_subjects);
-//                        teacher_search_list_of_subjects.setAdapter(filteredSosAdAdapter);
+                        filteredSosAdAdapter = new SOSAdAdapter(requireActivity(), R.layout.my_sos_ad_item, filtered_subjects);
+                        teacher_search_list_of_subjects.setAdapter(filteredSosAdAdapter);
                     }
 
                     @Override
