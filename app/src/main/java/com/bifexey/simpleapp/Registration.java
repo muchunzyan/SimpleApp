@@ -104,7 +104,7 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    myRefCurrentUser.setValue(new UserInfo(first_name_r, second_name_r, t_l, "student"));
+                    myRefCurrentUser.setValue(new UserInfo(first_name_r, second_name_r, t_l, "ученик"));
 
                     Intent intent = new Intent(getApplicationContext(), MainPage.class);
                     startActivity(intent);

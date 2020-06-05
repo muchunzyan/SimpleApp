@@ -105,16 +105,16 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         if (ds.getKey().equals("activity")){
-                            if (ds.getValue().toString().equals("teacher")){
+                            if (ds.getValue().toString().equals("учитель")){
                                 MenuItem sos = navView.getMenu().getItem(0);
                                 sos.setVisible(false);
-                                activity = "teacher";
+                                activity = "учитель";
                                 loadFragment(new AccountTeacherFragment());
                             }
-                            else if (ds.getValue().toString().equals("student")){
+                            else if (ds.getValue().toString().equals("ученик")){
                                 MenuItem sos = navView.getMenu().getItem(0);
                                 sos.setVisible(true);
-                                activity = "student";
+                                activity = "ученик";
                                 loadFragment(new AccountStudentFragment());
                             }
                         }
@@ -128,9 +128,9 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
                     }
                     else if (activity != null) {
                         if (!Integer.toString(navView.getSelectedItemId()).equals(Integer.toString(accountId))) {
-                            if (activity.equals("student")) {
+                            if (activity.equals("ученик")) {
                                 navView.setSelectedItemId(SOSId);
-                            } else if (activity.equals("teacher")) {
+                            } else if (activity.equals("учитель")) {
                                 navView.setSelectedItemId(SearchId);
                             }
                         }
@@ -195,21 +195,21 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
                     fragment = new SOS_Fragment();
                     break;
                 case R.id.navigation_search:
-                    if (activity.equals("teacher"))
+                    if (activity.equals("учитель"))
                         if (is_filtered)
                             fragment = new TeacherSearchFilterFragment();
                         else
                             fragment = new TeacherSearchFragment();
-                    else if (activity.equals("student"))
+                    else if (activity.equals("ученик"))
                         fragment = new SearchFragment();
                     break;
                 case R.id.navigation_chat:
                     fragment = new ChatFragment();
                     break;
                 case R.id.navigation_account:
-                    if (activity.equals("teacher"))
+                    if (activity.equals("учитель"))
                         fragment = new AccountTeacherFragment();
-                    if (activity.equals("student"))
+                    if (activity.equals("ученик"))
                         fragment = new AccountStudentFragment();
                     break;
             }

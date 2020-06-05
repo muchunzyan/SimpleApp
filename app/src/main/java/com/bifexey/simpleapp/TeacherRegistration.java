@@ -125,7 +125,7 @@ public class TeacherRegistration extends AppCompatActivity implements View.OnCli
                     Toast.makeText(getApplicationContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    myRefCurrentUser.child("activity").setValue("teacher");
+                    myRefCurrentUser.child("activity").setValue("учитель");
 
                     if(to_me) {
                         myRefCurrentUserTeacherInfoWhere.child("to_me").setValue(to_me);

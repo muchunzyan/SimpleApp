@@ -132,11 +132,11 @@ public class AccountStudentFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_activity_student:
-                myRefCurrentUser.child("activity").setValue("student");
+                myRefCurrentUser.child("activity").setValue("ученик");
                 break;
             case R.id.btn_activity_teacher:
                 if (possible) {
-                    myRefCurrentUser.child("activity").setValue("teacher");
+                    myRefCurrentUser.child("activity").setValue("учитель");
                 }
                 else {
                     Intent intent = new Intent(getContext(), TeacherRegistration.class);
